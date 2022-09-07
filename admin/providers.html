@@ -89,7 +89,7 @@
               </div>
               <div class="space-y-1">
                 <a
-                  href="providers.html"
+                  href="complaints.html"
                   class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
                 >
                   <svg
@@ -170,7 +170,7 @@
               class="flex justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-4"
             >
               <h1 class="text-2xl mb-2 font-semibold text-gray-900">
-                Consumers
+                Providers
               </h1>
               <div>
                 <div class="mt-1 flex rounded-md shadow-sm">
@@ -200,7 +200,7 @@
                       type="email"
                       name="email"
                       id="email"
-                      class="block w-full rounded-none rounded-l-md pl-10 sm:text-sm outline-indigo-600"
+                      class="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-10 sm:text-sm border-gray-300"
                       placeholder="Search candidates"
                     />
                   </div>
@@ -244,20 +244,9 @@
                               scope="col"
                               class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
                             >
-                              Email
+                              No of Provisions
                             </th>
-                            <th
-                              scope="col"
-                              class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                            >
-                              Address
-                            </th>
-                            <th
-                              scope="col"
-                              class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
-                            >
-                              Phone no.
-                            </th>
+
                             <th scope="col" class="relative px-6 py-3">
                               <span class="sr-only">Edit</span>
                             </th>
@@ -280,16 +269,7 @@
                             >
                               jane.cooper@example.com
                             </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              Regional Paradigm Technician
-                            </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              1234567890
-                            </td>
+
                             <td
                               class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                             >
@@ -298,14 +278,14 @@
                                 onclick="toggleModal('add-meter-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Approve
+                                Edit
                               </button>
                               <button
                                 type="button"
-                                onclick="toggleModal('reject-modal')"
+                                onclick="toggleModal('Delete-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Reject
+                                Delete
                               </button>
                             </td>
                           </tr>
@@ -325,16 +305,7 @@
                             >
                               jane.cooper@example.com
                             </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              Regional Paradigm Technician
-                            </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              1234567890
-                            </td>
+
                             <td
                               class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                             >
@@ -343,14 +314,14 @@
                                 onclick="toggleModal('add-meter-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Approve
+                                Edit
                               </button>
                               <button
                                 type="button"
-                                onclick="toggleModal('reject-modal')"
+                                onclick="toggleModal('Delete-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Reject
+                                Delete
                               </button>
                             </td>
                           </tr>
@@ -370,16 +341,7 @@
                             >
                               jane.cooper@example.com
                             </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              Regional Paradigm Technician
-                            </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              1234567890
-                            </td>
+
                             <td
                               class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                             >
@@ -388,14 +350,14 @@
                                 onclick="toggleModal('add-meter-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Approve
+                                Edit
                               </button>
                               <button
                                 type="button"
-                                onclick="toggleModal('reject-modal')"
+                                onclick="toggleModal('Delete-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Reject
+                                Delete
                               </button>
                             </td>
                           </tr>
@@ -415,16 +377,7 @@
                             >
                               jane.cooper@example.com
                             </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              Regional Paradigm Technician
-                            </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              1234567890
-                            </td>
+
                             <td
                               class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                             >
@@ -433,14 +386,14 @@
                                 type="button"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Approve
+                                Edit
                               </button>
                               <button
                                 type="button"
-                                onclick="toggleModal('reject-modal')"
+                                onclick="toggleModal('Delete-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Reject
+                                Delete
                               </button>
                             </td>
                           </tr>
@@ -460,16 +413,7 @@
                             >
                               jane.cooper@example.com
                             </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              Regional Paradigm Technician
-                            </td>
-                            <td
-                              class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"
-                            >
-                              1234567890
-                            </td>
+
                             <td
                               class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
                             >
@@ -478,14 +422,14 @@
                                 onclick="toggleModal('add-meter-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Approve
+                                Edit
                               </button>
                               <button
                                 type="button"
-                                onclick="toggleModal('reject-modal')"
+                                onclick="toggleModal('Delete-modal')"
                                 class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
                               >
-                                Reject
+                                Delete
                               </button>
                             </td>
                           </tr>
@@ -504,7 +448,7 @@
       </div>
     </div>
 
-    <!-- meter modal -->
+    <!-- delete edit modal  -->
     <div
       class="relative z-10 hidden"
       aria-labelledby="modal-title"
@@ -528,7 +472,7 @@
                 <form class="space-y-8 divide-y divide-gray-200">
                   <div class="space-y-4 divide-y divide-gray-200">
                     <h3 class="text-lg leading-6 font-medium text-gray-900">
-                      Add meter
+                      Edit Meter
                     </h3>
 
                     <div
@@ -539,84 +483,29 @@
                           for="first-name"
                           class="block text-sm font-medium text-gray-700"
                         >
-                          Meter No
-                        </label>
-                        <div class="mt-1">
-                          <input
-                            type="number"
-                            name="meter-no"
-                            id="meter-no"
-                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                          />
-                        </div>
-                      </div>
-
-                      <div class="sm:col-span-3">
-                        <label
-                          for="country"
-                          class="block text-sm font-medium text-gray-700"
-                        >
-                          Select Phase
-                        </label>
-                        <div class="mt-1">
-                          <select
-                            class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            aria-label="Default select example"
-                          >
-                            <option value="phase1">phase1</option>
-                            <option value="phase2">phase2</option>
-                            <option value="phase2">phase3</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="sm:col-span-3">
-                        <label
-                          for="country"
-                          class="block text-sm font-medium text-gray-700"
-                        >
-                          Connection Status
-                        </label>
-                        <div class="mt-1">
-                          <select
-                            class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            aria-label="Default select example"
-                          >
-                            <option value="Active">Active</option>
-                            <option value="Inactive">Inactive</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="sm:col-span-3">
-                        <label
-                          for="country"
-                          class="block text-sm font-medium text-gray-700"
-                        >
-                          Connection type
-                        </label>
-                        <div class="mt-1">
-                          <select
-                            class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            aria-label="Default select example"
-                          >
-                            <option value="Domestic">Domestic</option>
-                            <option value="Industrial">Industrial</option>
-                            <option value="Industrial">Commercial</option>
-                            <option value="Industrial">Agricultural</option>
-                          </select>
-                        </div>
-                      </div>
-                      <div class="sm:col-span-3">
-                        <label
-                          for="country"
-                          class="block text-sm font-medium text-gray-700"
-                        >
-                          Connection date
+                          Name
                         </label>
                         <input
-                          class="rounded border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none w-full"
-                          type="date"
-                          name=""
-                          id=""
+                          type="text"
+                          name="name"
+                          id="name"
+                          placeholder="name"
+                          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2 block w-full sm:text-sm border-gray-300 rounded-md border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                        />
+                      </div>
+                      <div class="sm:col-span-3">
+                        <label
+                          for="country"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          No of Provisions
+                        </label>
+                        <input
+                          type="text"
+                          name="provisions"
+                          id="provisions"
+                          placeholder="Provisions"
+                          class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2 block w-full sm:text-sm border-gray-300 rounded-md border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
                         />
                       </div>
                     </div>
@@ -646,12 +535,12 @@
       </div>
     </div>
 
-    <!-- reject modal -->
+    <!-- Delete modal -->
     <div
       class="fixed z-10 inset-0 overflow-y-auto hidden"
       aria-labelledby="modal-title"
       role="dialog"
-      id="reject-modal"
+      id="Delete-modal"
       aria-modal="true"
     >
       <div
@@ -696,11 +585,11 @@
                 class="text-lg leading-6 font-medium text-gray-900"
                 id="modal-title"
               >
-                Reject Account
+                Delete
               </h3>
               <div class="mt-2">
                 <p class="text-sm text-gray-500">
-                  Are you sure you want to reject this Account? All of data will
+                  Are you sure you want to Delete this Account? All of data will
                   be permanently removed from our servers forever. This action
                   cannot be undone.
                 </p>
@@ -712,10 +601,10 @@
               type="button"
               class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:w-auto sm:text-sm"
             >
-              Reject
+              Delete
             </button>
             <button
-              onclick="toggleModal('reject-modal')"
+              onclick="toggleModal('Delete-modal')"
               type="button"
               class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 px-4 py-2 bg-white text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
             >
