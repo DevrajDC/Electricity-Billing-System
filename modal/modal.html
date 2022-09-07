@@ -18,7 +18,7 @@
       type="button"
       onclick="toggleModal('add-meter-modal')"
     >
-      open add Meter
+      Open Add Meter
     </button>
     <div
       class="relative z-10 hidden"
@@ -27,16 +27,6 @@
       aria-modal="true"
       id="add-meter-modal"
     >
-      <!--
-      Background backdrop, show/hide based on modal state.
-  
-      Entering: "ease-out duration-300"
-        From: "opacity-0"
-        To: "opacity-100"
-      Leaving: "ease-in duration-200"
-        From: "opacity-100"
-        To: "opacity-0"
-    -->
       <div
         class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity"
       ></div>
@@ -45,123 +35,105 @@
         <div
           class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0"
         >
-          <!--
-          Modal panel, show/hide based on modal state.
-  
-          Entering: "ease-out duration-300"
-            From: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-            To: "opacity-100 translate-y-0 sm:scale-100"
-          Leaving: "ease-in duration-200"
-            From: "opacity-100 translate-y-0 sm:scale-100"
-            To: "opacity-0 translate-y-4 sm:translate-y-0 sm:scale-95"
-        -->
           <div
             class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
           >
             <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-              <div class="sm:flex sm:items-start">
-                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                  <form class="space-y-8 divide-y divide-gray-200">
-                    <div class="space-y-8 divide-y divide-gray-200">
-                      <div>
-                        <div>
-                          <h3
-                            class="text-lg leading-6 font-medium text-gray-900"
-                          >
-                            Add meter
-                          </h3>
-                        </div>
-                      </div>
+              <div class="mt-3 text-center sm:mt-0 sm:text-left">
+                <form class="space-y-8 divide-y divide-gray-200">
+                  <div class="space-y-4 divide-y divide-gray-200">
+                    <h3 class="text-lg leading-6 font-medium text-gray-900">
+                      Add meter
+                    </h3>
 
-                      <div
-                        class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6"
-                      >
-                        <div class="sm:col-span-3">
-                          <label
-                            for="first-name"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Meter No
-                          </label>
-                          <div class="mt-1">
-                            <input
-                              type="number"
-                              name="meter-no"
-                              id="meter-no"
-                              class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="sm:col-span-3">
-                          <label
-                            for="country"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Select Phase
-                          </label>
-                          <div class="mt-1">
-                            <select
-                              class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                              aria-label="Default select example"
-                            >
-                              <option value="phase1">phase1</option>
-                              <option value="phase2">phase2</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="sm:col-span-3">
-                          <label
-                            for="country"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Connection Status
-                          </label>
-                          <div class="mt-1">
-                            <select
-                              class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                              aria-label="Default select example"
-                            >
-                              <option value="Active">Active</option>
-                              <option value="Inactive">Inactive</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="sm:col-span-3">
-                          <label
-                            for="country"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Connection type
-                          </label>
-                          <div class="mt-1">
-                            <select
-                              class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                              aria-label="Default select example"
-                            >
-                              <option value="Active">Active</option>
-                              <option value="Inactive">Inactive</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="sm:col-span-3">
-                          <label
-                            for="country"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Connection date
-                          </label>
+                    <div
+                      class="mt-2 pt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6"
+                    >
+                      <div class="sm:col-span-3">
+                        <label
+                          for="first-name"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          Meter No
+                        </label>
+                        <div class="mt-1">
                           <input
-                            class="rounded border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            type="date"
-                            name=""
-                            id=""
+                            type="number"
+                            name="meter-no"
+                            id="meter-no"
+                            class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                           />
                         </div>
                       </div>
+
+                      <div class="sm:col-span-3">
+                        <label
+                          for="country"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          Select Phase
+                        </label>
+                        <div class="mt-1">
+                          <select
+                            class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            aria-label="Default select example"
+                          >
+                            <option value="phase1">phase1</option>
+                            <option value="phase2">phase2</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="sm:col-span-3">
+                        <label
+                          for="country"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          Connection Status
+                        </label>
+                        <div class="mt-1">
+                          <select
+                            class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            aria-label="Default select example"
+                          >
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="sm:col-span-3">
+                        <label
+                          for="country"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          Connection type
+                        </label>
+                        <div class="mt-1">
+                          <select
+                            class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                            aria-label="Default select example"
+                          >
+                            <option value="Active">Active</option>
+                            <option value="Inactive">Inactive</option>
+                          </select>
+                        </div>
+                      </div>
+                      <div class="sm:col-span-3">
+                        <label
+                          for="country"
+                          class="block text-sm font-medium text-gray-700"
+                        >
+                          Connection date
+                        </label>
+                        <input
+                          class="rounded border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                          type="date"
+                          name=""
+                          id=""
+                        />
+                      </div>
                     </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
               </div>
             </div>
             <div
@@ -174,6 +146,7 @@
                 Submit
               </button>
               <button
+                onclick="toggleModal('add-meter-modal')"
                 type="button"
                 class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
               >
@@ -232,109 +205,25 @@
             class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg"
           >
             <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
-              <div class="sm:flex sm:items-start">
-                <div class="mt-3 text-center sm:mt-0 sm:ml-4 sm:text-left">
-                  <form class="space-y-8 divide-y divide-gray-200">
-                    <div class="space-y-8 divide-y divide-gray-200">
-                      <div>
-                        <div>
-                          <h3
-                            class="text-lg leading-6 font-medium text-gray-900"
-                          >
-                            Add Complaint
-                          </h3>
-                        </div>
-                      </div>
-
-                      <div
-                        class="mt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6"
+              <div class="mt-3 text-center sm:mt-0 sm:text-left">
+                <form class="space-y-8 divide-y divide-gray-200">
+                  <div class="space-y-8 divide-y divide-gray-200">
+                    <div>
+                      <h3
+                        class="text-lg leading-6 font-medium text-gray-900 mb-4"
                       >
-                        <div class="sm:col-span-3">
-                          <label
-                            for="first-name"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Meter No
-                          </label>
-                          <div class="mt-1">
-                            <input
-                              type="number"
-                              name="meter-no"
-                              id="meter-no"
-                              class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
-                            />
-                          </div>
-                        </div>
-
-                        <div class="sm:col-span-3">
-                          <label
-                            for="country"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Select Phase
-                          </label>
-                          <div class="mt-1">
-                            <select
-                              class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                              aria-label="Default select example"
-                            >
-                              <option value="phase1">phase1</option>
-                              <option value="phase2">phase2</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="sm:col-span-3">
-                          <label
-                            for="country"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Connection Status
-                          </label>
-                          <div class="mt-1">
-                            <select
-                              class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                              aria-label="Default select example"
-                            >
-                              <option value="Active">Active</option>
-                              <option value="Inactive">Inactive</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="sm:col-span-3">
-                          <label
-                            for="country"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Connection type
-                          </label>
-                          <div class="mt-1">
-                            <select
-                              class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                              aria-label="Default select example"
-                            >
-                              <option value="Active">Active</option>
-                              <option value="Inactive">Inactive</option>
-                            </select>
-                          </div>
-                        </div>
-                        <div class="sm:col-span-3">
-                          <label
-                            for="country"
-                            class="block text-sm font-medium text-gray-700"
-                          >
-                            Connection date
-                          </label>
-                          <input
-                            class="rounded border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                            type="date"
-                            name=""
-                            id=""
-                          />
-                        </div>
-                      </div>
+                        Add Complaint
+                      </h3>
+                      <textarea
+                        id="about"
+                        name="about"
+                        rows="3"
+                        style="width: 100%"
+                        class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md p-2"
+                      ></textarea>
                     </div>
-                  </form>
-                </div>
+                  </div>
+                </form>
               </div>
             </div>
             <div
@@ -349,6 +238,7 @@
               <button
                 type="button"
                 class="mt-3 inline-flex w-full justify-center rounded-md border border-gray-300 bg-white px-4 py-2 text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm"
+                onclick="toggleModal('complaint-modal')"
               >
                 Cancel
               </button>
@@ -357,6 +247,16 @@
         </div>
       </div>
     </div>
+
+    <!-- approve modal -->
+    <button
+      class="bg-pink-500 text-white active:bg-pink-600 font-bold uppercase text-sm px-6 py-3 rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+      type="button"
+      onclick="toggleModal('reject-modal')"
+    >
+      approve
+    </button>
+    <!-- reject modal -->
 
     <script src="index.js"></script>
   </body>
