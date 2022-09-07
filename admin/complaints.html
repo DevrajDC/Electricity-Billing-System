@@ -572,6 +572,12 @@
                             >
                               Summary
                             </th>
+                            <th
+                              scope="col"
+                              class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"
+                            >
+                              update status
+                            </th>
                           </tr>
                         </thead>
                         <tbody class="bg-white divide-y divide-gray-200">
@@ -586,7 +592,7 @@
                             </td>
                             <td class="px-6 py-4 whitespace-nowrap">
                               <span
-                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-indigo-100 text-indigo-800"
+                                class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"
                               >
                                 resolved
                               </span>
@@ -602,6 +608,28 @@
                                 repellat nulla voluptatibus quo reprehenderit!
                                 Amet!
                               </div>
+                            </td>
+                            <td class="px-6 py-4 text-sm text-gray-500">
+                              <div class="flex justify-center">
+                                <div class="mb-3 xl:w-96">
+                                  <select
+                                    class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
+                                    aria-label="Default select example"
+                                  >
+                                    <option value="pending">pending</option>
+                                    <option value="resolved">resolved</option>
+                                  </select>
+                                </div>
+                              </div>
+                            </td>
+                            <td
+                              class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium"
+                            >
+                              <a
+                                href="#"
+                                class="text-indigo-600 hover:text-indigo-900"
+                                >Update</a
+                              >
                             </td>
                           </tr>
 
