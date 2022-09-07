@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/flowbite@1.5.2/dist/flowbite.min.css"
+    />
+    <title>Admin | Consumers</title>
+  </head>
+  <body>
+    <div>
+      <!-- Static sidebar for desktop -->
+      <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">
+        <div
+          class="flex flex-col flex-grow border-r border-gray-200 pt-5 pb-4 bg-white overflow-y-auto"
+        >
+          <div class="flex items-center flex-shrink-0 px-4">
+            <img
+              class="h-8 w-auto"
+              src="https://tailwindui.com/img/logos/workflow-logo-indigo-600-mark-gray-800-text.svg"
+              alt="Workflow"
+            />
+          </div>
+          <div class="mt-5 flex-grow flex flex-col">
+            <nav class="flex-1 px-2 space-y-1 bg-white" aria-label="Sidebar">
+              <div class="space-y-1">
+                <a 
+                class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                  href="complaints.html"
+                  >
+                  <svg
+                    class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                    aria-hidden="true"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      stroke-width="2"
+                      d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"
+                    />
+                  </svg>
+                  <span class="flex-1">Consumers</span></a
+                >
+              </div>
+              <div class="space-y-1">
+                <a
+                  href="complaints.html"
+                  class="bg-gray-100 text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M8.25 21v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21m0 0h4.5V3.545M12.75 21h7.5V10.75M2.25 21h1.5m18 0h-18M2.25 9l4.5-1.636M18.75 3l-1.5.545m0 6.205l3 1m1.5.5l-1.5-.5M6.75 7.364V3h-3v18m3-13.636l10.5-3.819"
+                    />
+                  </svg>
+
+                  <span class="flex-1">Connections</span></a
+                >
+              </div>
+              <div class="space-y-1">
+                <a
+                  href="complaints.html"
+                  class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M3.75 21h16.5M4.5 3h15M5.25 3v18m13.5-18v18M9 6.75h1.5m-1.5 3h1.5m-1.5 3h1.5m3-6H15m-1.5 3H15m-1.5 3H15M9 21v-3.375c0-.621.504-1.125 1.125-1.125h3.75c.621 0 1.125.504 1.125 1.125V21"
+                    />
+                  </svg>
+
+                  <span class="flex-1">Distributors</span></a
+                >
+              </div>
+              <div class="space-y-1">
+                <a
+                  href="complaints.html"
+                  class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M12 9v3.75m0-10.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.75c0 5.592 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.57-.598-3.75h-.152c-3.196 0-6.1-1.249-8.25-3.286zm0 13.036h.008v.008H12v-.008z"
+                    />
+                  </svg>
+
+                  <span class="flex-1">Complaints</span></a
+                >
+              </div>
+              <div class="space-y-1">
+                <a
+                  href="complaints.html"
+                  class="bg-white text-gray-600 hover:bg-gray-50 hover:text-gray-900 group w-full flex items-center pl-2 pr-1 py-2 text-left text-sm font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500"
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke-width="1.5"
+                    stroke="currentColor"
+                    class="mr-3 flex-shrink-0 h-6 w-6 text-gray-400 group-hover:text-gray-500"
+                  >
+                    <path
+                      stroke-linecap="round"
+                      stroke-linejoin="round"
+                      d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z"
+                    />
+                  </svg>
+                  <span class="flex-1">Bills</span></a
+                >
+              </div>
+            </nav>
+          </div>
+        </div>
+      </div>
+      <div class="md:pl-64 flex flex-col flex-1">
+        <div
+          class="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-gray-100"
+        >
+          <button
+            type="button"
+            class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500"
+          >
+            <span class="sr-only">Open sidebar</span>
+            <!-- Heroicon name: outline/menu -->
+            <svg
+              class="h-6 w-6"
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16M4 18h16"
+              />
+            </svg>
+          </button>
+        </div>
+<div class="py-6 flex-1">
+    <!--search bar-->
+    <div class="flex justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-4">
+        <div class="mt-1 max-w-30 flex rounded-md shadow-sm ">
+          <div
+            class="relative flex items-stretch flex-grow focus-within:z-10"
+          >
+            <div
+              class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none"
+            >
+              <!-- Heroicon name: solid/users -->
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke-width="1.5"
+                stroke="currentColor"
+                class="h-5 w-5 text-gray-400"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"
+                />
+              </svg>
+            </div>
+            <input
+              type="search"
+              name="search"
+              id="search"
+              class="focus:ring-indigo-500 focus:border-indigo-500 block w-full rounded-none rounded-l-md pl-10 sm:text-sm border-gray-300"
+              placeholder="Search candidates"
+            />
+          </div>
+          <button
+            type="button"
+            class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-white bg-indigo-500 hover:bg-gray-100 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500"
+          >
+            <!-- Heroicon name: solid/sort-ascending -->
+            <span>Search</span>
+          </button>
+        </div>
+      </div>
+      
+    </div>
+    <div style="margin:100px">
+      <!--con-->
+      <div class="relative pb-5 border-b border-gray-200 sm:pb-0">
+      <div class="md:flex md:items-center md:justify-between">
+        <h3 class="text-lg leading-6 font-medium text-gray-900">Meter:-1029384930</h3>
+        <div class="mt-3 flex md:mt-0 md:absolute md:top-3 md:right-0">
+          <button type="button" class="ml-3 inline-flex items-center px-4 py-2 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Delete</button>
+        </div>
+      </div>
+      <div class="mt-4">  
+        <!-- Tabs at small breakpoint and up -->
+        <div class="hidden sm:block">
+          <nav class="-mb-px flex space-x-8">
+            <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+            <a href="#" class="menu1 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm" onclick="changeslide('p1','p2','p3')"> Details </a>
+    
+            <a href="#" class="menu2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm" onclick="changeslide('p2','p1','p3')"> connection </span>
+    
+            <a  href="#" class="menu3 border-indigo-500 text-indigo-600 whitespace-nowrap pb-4 px-1 border-b-2 font-medium text-sm" aria-current="page" onclick="changeslide('p3','p1','p2',)"> bill </a>
+          </nav>
+        </div>
+      </div>
+    </div>
+    <div >
+      <br>
+      <!--details-->
+      <h3 class="text-lg leading-6 font-medium text-gray-900" id="hh1">Applicant Information</h3>
+      <p class="mt-1 max-w-2xl text-sm text-gray-500" id="hh2">Personal details and application.</p>
+    </div>
+    <div class="mt-5 border-t border-gray-200" id="p1">
+      <dl class="divide-y divide-gray-200">
+        <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+          <dt class="text-sm font-medium text-gray-500">Full name</dt>
+          <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+            <span class="flex-grow">Margot Foster</span>
+            <span class="ml-4 flex-shrink-0">
+              <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+            </span>
+          </dd>
+        </div>
+        <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
+          <dt class="text-sm font-medium text-gray-500">Phone</dt>
+          <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+            <span class="flex-grow">9133489736</span>
+            <span class="ml-4 flex-shrink-0">
+              <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+            </span>
+          </dd>
+        </div>
+        <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
+          <dt class="text-sm font-medium text-gray-500">Email address</dt>
+          <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+            <span class="flex-grow">margotfoster@example.com</span>
+            <span class="ml-4 flex-shrink-0">
+              <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+            </span>
+          </dd>
+        </div>
+          </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+           
+      <div  id="p2" class="mt-5 border-t border-gray-200" style="display:none"  >
+        <!--details-->
+        <dl class="divide-y divide-gray-200">
+          <div class="py-4 sm:py-5 sm:grid sm:grid-cols-3 sm:gap-4">
+            <dt class="text-sm font-medium text-gray-500">consumer_id</dt>
+            <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <span class="flex-grow">345327538</span>
+              <span class="ml-4 flex-shrink-0">
+                <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+              </span>
+            </dd>
+          </div>
+          <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-sm font-medium text-gray-500">Connection Type</dt>
+            <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <span class="flex-grow">domestic</span>
+              <span class="ml-4 flex-shrink-0">
+                <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+              </span>
+            </dd>
+          </div>
+          <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-sm font-medium text-gray-500">Address</dt>
+            <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <span class="flex-grow">h.no 3 dorf dolgew gregknrwe </span>
+              <span class="ml-4 flex-shrink-0">
+                <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+              </span>
+            </dd>
+          </div>
+          <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-sm font-medium text-gray-500">Phase</dt>
+            <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <span class="flex-grow">1-phase </span>
+              <span class="ml-4 flex-shrink-0">
+                <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+              </span>
+            </dd>
+          </div>
+           <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-sm font-medium text-gray-500">Connection Status</dt>
+            <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <span class="flex-grow">active</span>
+              <span class="ml-4 flex-shrink-0">
+                <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+              </span>
+            </dd>
+          </div>
+          <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
+            <dt class="text-sm font-medium text-gray-500">connection_date</dt>
+            <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
+              <span class="flex-grow">1/1/2022 </span>
+              <span class="ml-4 flex-shrink-0">
+                <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Update</button>
+              </span>
+            </dd>
+          </div>
+         </div>
+         <br>
+          <div  id="p3" style="display:none ;">
+            <!--details-->
+            <div>
+            <div class="flex flex-col">
+              <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
+                <div class="py-2 align-middle inline-block min-w-full sm:px-6 lg:px-8">
+                  <div class="shadow overflow-hidden border-b border-gray-200 sm:rounded-lg">
+                    <table class="min-w-full divide-y divide-gray-200">
+                      <thead class="bg-gray-50">
+                        <tr>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">bill no</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">date</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">current reading</th>
+                          <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">amount</th>
+                          <th scope="col" class="relative px-6 py-3">
+                            <span class="sr-only">Edit</span>
+                          </th>
+                        </tr>
+                      </thead>
+                      <tbody class="bg-white divide-y divide-gray-200">
+                        <tr>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">21</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">1/1/2022</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">43943</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">$21</td>
+                          <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                            <a href="#" class="text-indigo-600 hover:text-indigo-900">Edit</a>
+                          </td>
+                        </tr>
+            
+                        <!-- More people... -->
+                      </tbody>
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+              </div>
+              </div>
+    </div>
+          </li>
+            </ul>
+          </dd>
+        </div>
+      </dl>
+    </div>
+
+</div>
+
+<script src="../consumer/index.js"></script>
+    </body>
+</html>
