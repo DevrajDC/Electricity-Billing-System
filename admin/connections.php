@@ -53,11 +53,7 @@
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Number of connections
                       </th>
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Phone number
-                      </th>
 
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
                     </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
@@ -71,15 +67,16 @@
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         jane.cooper@example.com
                       </td>
-                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                        3
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        1234567890
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right">
+
+                      <td class="px-6 py-4 flex gap-12 whitespace-nowrap text-left">
                         <a href="consumerdetails.php" class="text-indigo-600 text-sm font-bold">
-                          View Details
+                          Meter1
+                        </a>
+                        <a href="consumerdetails.php" class="text-indigo-600 text-sm font-bold">
+                          Meter2
+                        </a>
+                        <a href="consumerdetails.php" class="text-indigo-600 text-sm font-bold">
+                          Meter3
                         </a>
                       </td>
                     </tr>
