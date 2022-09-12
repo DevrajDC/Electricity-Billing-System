@@ -43,3 +43,26 @@ function navcolor(j1, j2, j3) {
   document.getElementById(j2).className = j;
   document.getElementById(j3).className = j;
 }
+
+//  function screenchange()
+//  {
+//     console.log('a');
+//    var imagesbg=Array("url(../assets/Electricity.jpg)","url(../assets/OIP.jpg)");
+//    console.log('a');
+//    for(var i=0;i<imagesbg.length;i++){
+//     console.log(imagesbg[i]);
+//     setTimeout(,3000);
+// }
+var i = 0;
+var imagesbg = Array(
+  "url(../assets/Electricity.jpg)",
+  "url(https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)"
+);
+setInterval(() => {
+  console.log(document.getElementById("img").style.backgroundImage);
+  document.getElementById("img").style.backgroundImage = imagesbg[i];
+  i++;
+  if (i == 2) {
+    i = 0;
+  }
+}, 3000);

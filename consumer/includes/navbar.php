@@ -7,7 +7,7 @@ $third_part = $components[3];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-gray-100">
 
 <head>
     <meta charset="UTF-8" />
@@ -30,9 +30,9 @@ $third_part = $components[3];
                                 <div class="hidden md:block">
                                     <div class="ml-10 flex items-baseline space-x-4">
                                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                        <a href="bills.php" class="<?php if ($third_part == "bills.php") echo "bg-gray-900"; ?> text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Bills</a>
+                                        <a href="index.php" class="<?php if ($third_part == "index.php") echo "bg-gray-900"; ?> text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
 
-                                        <a href="complaints.php" class="<?php if ($third_part == "complaints.php") echo "bg-gray-900"; ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Transaction History</a>
+                                        <a href="bills.php" class="<?php if ($third_part == "bills.php") echo "bg-gray-900"; ?> text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Bills</a>
 
                                         <a href="complaints.php" class="<?php if ($third_part == "complaints.php") echo "bg-gray-900"; ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Complaint</a>
 
