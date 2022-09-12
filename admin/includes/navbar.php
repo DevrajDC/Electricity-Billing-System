@@ -7,7 +7,7 @@ $third_part = $components[3];
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full bg-gray-100">
 
 <head>
   <meta charset="UTF-8" />
@@ -16,7 +16,7 @@ $third_part = $components[3];
   <title>Admin | Consumers</title>
 </head>
 
-<body>
+<body class="h-full">
   <div>
     <!-- Static sidebar for desktop -->
     <div class="hidden md:flex md:w-64 md:flex-col md:fixed md:inset-y-0">

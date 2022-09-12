@@ -2,8 +2,9 @@
 
 
 <header class="py-5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-end">
         <h1 class="text-3xl font-bold text-white">Bills</h1>
+        <h1 class="text-lg font-semibold text-white">Meter ID: <span class="text-base text-gray-300 px-3 py-1 ml-2 border border-indigo-600 rounded">12345678</span></h1>
     </div>
 </header>
 </div>
