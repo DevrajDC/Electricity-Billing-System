@@ -32,9 +32,7 @@
     <main class="bg-gray-100 h-screen p-6">
       <form
         class="max-w-xl m-auto mt-24 p-16 bg-white rounded-lg shadow sm:mt-16 lg:mt-24"
-        action="fileupload.php"
-        method="POST"
-        enctype="multipart/form-data"
+        action="insertRecords.php" method="POST" enctype="multipart/form-data"
       >
         <h1 class="font-bold text-center text-3xl mb-6">Oneshield EBS</h1>
         <label
