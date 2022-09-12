@@ -33,7 +33,7 @@
                     </div>
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
                         <dt class="text-sm font-medium text-gray-500">Address</dt>
-                        <input type="text" outline="none" value="fdlas ldksajflas assdlfkjadsf lksdjf" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
+                        <textarea name="" id="" cols="3" rows="3" value="jdlkfsklfj lkj dlfkj" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 " style="border:none;"></textarea>
                     </div>
 
                     <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
