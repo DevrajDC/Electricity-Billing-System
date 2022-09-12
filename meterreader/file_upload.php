@@ -24,14 +24,14 @@
       text-shadow: 1px 1px #fff;
       font-weight: 700;
       font-size: 10pt;
-      width: 100%;
+      width: 100% !important;
       text-align: center;
     }
   </style>
   <body>
     <main class="bg-gray-100 h-screen p-6">
       <form
-        class="max-w-xl m-auto mt-24 p-16 bg-white rounded-lg shadow"
+        class="max-w-xl m-auto mt-24 p-16 bg-white rounded-lg shadow sm:mt-16 lg:mt-24"
         action="fileupload.php"
         method="POST"
         enctype="multipart/form-data"
