@@ -30,13 +30,17 @@ $third_part = $components[3];
                                 <div class="hidden md:block">
                                     <div class="ml-10 flex items-baseline space-x-4">
                                         <!-- Current: "bg-gray-900 text-white", Default: "text-gray-300 hover:bg-gray-700 hover:text-white" -->
-                                        <a href="index.php" class="<?php if ($third_part == "index.php") echo "bg-gray-900"; ?> text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
+                                        <a href="index.php" class="<?php if ($third_part == "index.php") echo "bg-gray-900 text-white";
+                                                                    else echo "text-gray-300" ?>   px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Home</a>
 
-                                        <a href="bills.php" class="<?php if ($third_part == "bills.php") echo "bg-gray-900"; ?> text-white px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Bills</a>
+                                        <a href="bills.php" class="<?php if ($third_part == "bills.php") echo "bg-gray-900 text-white";
+                                                                    else echo "text-gray-300" ?>  px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Bills</a>
 
-                                        <a href="complaints.php" class="<?php if ($third_part == "complaints.php") echo "bg-gray-900"; ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Complaint</a>
+                                        <a href="complaints.php" class="<?php if ($third_part == "complaints.php") echo "bg-gray-900 text-white";
+                                                                        else echo "text-gray-300" ?>  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Complaint</a>
 
-                                        <a href="profile.php" class="<?php if ($third_part == "profile.php") echo "bg-gray-900"; ?> text-gray-300 hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
+                                        <a href="profile.php" class="<?php if ($third_part == "profile.php") echo "bg-gray-900 text-white";
+                                                                        else echo "text-gray-300" ?>  hover:bg-gray-700 hover:text-white px-3 py-2 rounded-md text-sm font-medium">Profile</a>
                                     </div>
                                 </div>
                             </div>

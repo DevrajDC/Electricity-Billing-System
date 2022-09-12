@@ -1,50 +1,48 @@
 <?php include("includes/navbar.php"); ?>
 <header class="py-5">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class=" flex justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold text-white">Profile</h1>
+        <button type="button" onclick="toggleModal('add-meter-modal')" class="h-fit px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+            Update
+        </button>
     </div>
+
 </header>
 </div>
 <main class="-mt-32">
     <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
 
-        <!-- Right Side -->
-        <div class="w-full mx-2 h-64">
-            <!-- Profile tab -->
-            <div class="bg-white p-3 shadow-sm rounded-sm">
+        <div class="overflow-hidden bg-white shadow sm:rounded-lg">
 
-                <div class="text-gray-700">
-                    <div class="grid md:grid-cols-2 text-sm">
-                        <div class="grid grid-cols-2">
-                            <div class="px-4 py-2 font-semibold">User name</div>
-                            <div class="px-4 py-2">Jane Doe</div>
-                        </div>
-                        <div class="grid grid-cols-2">
-                            <div class="px-4 py-2 font-semibold">Email.</div>
-                            <div class="px-4 py-2">
-                                <a class="text-blue-800" href="mailto:jane@example.com">jane@example.com</a>
-                            </div>
-                        </div>
+            <div class="border-t border-gray-200">
+                <dl>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Name</dt>
+                        <input type="text" outline="none" value="Devraj" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
 
-                        <div class="grid grid-cols-2">
-                            <div class="px-4 py-2 font-semibold">Phone No.</div>
-                            <div class="px-4 py-2">+11 998001001</div>
-                        </div>
-                        <div class="grid grid-cols-2">
-                            <div class="px-4 py-2 font-semibold"> Address</div>
-                            <div class="px-4 py-2">Beech Creek, PA, Pennsylvania</div>
-                        </div>
                     </div>
-                </div>
-                <button class="block w-full text-blue-800 text-sm font-semibold rounded-lg hover:bg-gray-100 focus:outline-none focus:shadow-outline focus:bg-gray-100 hover:shadow-xs p-3 my-4">
-                    Edit Profile</button>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Phone No</dt>
+                        <input type="text" outline="none" value="12321321321" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
+
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Email</dt>
+                        <input type="email" outline="none" value="pranath@gmail.com" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
+
+                    </div>
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">Address</dt>
+                        <input type="text" outline="none" value="fdlas ldksajflas assdlfkjadsf lksdjf" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
+                    </div>
+
+                    <div class="bg-white px-4 py-5 sm:grid sm:grid-cols-3 sm:gap-4 sm:px-6">
+                        <dt class="text-sm font-medium text-gray-500">No Of Connections</dt>
+                        <input type="text" outline="none" value="21" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
+                    </div>
+
+                </dl>
             </div>
-            <!-- End of about section -->
-
-            <div class="my-4"></div>
-
-
-            <!-- End of profile tab -->
         </div>
 
     </div>
