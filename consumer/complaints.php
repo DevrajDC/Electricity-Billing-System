@@ -2,8 +2,9 @@
 
 
 <header class="py-5">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-    <h1 class="text-3xl font-bold text-white">Complaint</h1>
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-end">
+    <h1 class="text-3xl font-bold text-white">Complaints</h1>
+    <h1 class="text-lg font-semibold text-white">Meter ID: <span class="text-md text-white px-4 py-1 ml-2 border border-gray-600 rounded">12345678</span></h1>
   </div>
 </header>
 </div>
@@ -18,7 +19,7 @@
           <div class="flex flex-col">
             <div class="-my-2 overflow-x-auto sm:-mx-6 lg:-mx-8">
               <div class=" align-middle inline-block min-w-full ">
-                <div class="min-h-[30rem] bg-white shadow overflow-hidden  border border-gray-200 rounded-lg">
+                <div class="min-h-[30rem] bg-white shadow overflow-hidden rounded-lg">
                   <table class="min-w-full divide-y divide-gray-200">
                     <thead class="bg-gray-50">
                       <tr>
