@@ -49,6 +49,9 @@
                         Name
                       </th>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Email
+                      </th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Address
                       </th>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
@@ -82,6 +85,24 @@
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         1234567890
                       </td>
+                      <<<<<<< HEAD=======<td class="px-6 py-4 whitespace-nowrap text-right">
+                        <button type="button" onclick="toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                          Approve
+                        </button>
+                        <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                          Reject
+                        </button>
+                        </td>
+                    </tr>
+                    <tr>
+                      <input type="text" value="1" id="con-id" />
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        01
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        Jane Cooper
+                      </td>
+                      >>>>>>> 48ad2691aeaf1bd9a35daafb067577f6bb84d34b
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         North-Goa
                       </td>
@@ -92,7 +113,7 @@
                         Industrial
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-right">
-                        <button type="button" onclick="toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                        <button type="button" onclick="toggleModal('add-meter-modal'); populateForm('<?php echo "123" ?>');" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                           Approve
                         </button>
                         <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
@@ -121,6 +142,7 @@
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div class="mt-3 text-center sm:mt-0 sm:text-left">
             <form class="space-y-8 divide-y divide-gray-200">
+              <input type="text" value="" id="consumer-id" />
               <div class="space-y-4 divide-y divide-gray-200">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                   Add meter
@@ -201,7 +223,6 @@
   <div class="flex items-end justify-center min-h-screen pt-4 px-4 pb-20 text-center sm:block sm:p-0">
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
-
     <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
       <div class="sm:flex sm:items-start">
         <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">

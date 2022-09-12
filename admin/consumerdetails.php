@@ -49,8 +49,15 @@
             <div>
               <br>
               <!--details-->
-              <h3 class="text-lg leading-6 font-medium text-gray-900" id="hh1">Applicant Information</h3>
-              <p class="mt-1 max-w-2xl text-sm text-gray-500" id="hh2">Personal details and application.</p>
+              <div class="flex w-full- items-center">
+                <div class="w-full">
+                  <h3 class="text-lg leading-6 font-medium text-gray-900" id="hh1">Applicant Information</h3>
+                  <p class="mt-1 max-w-2xl text-sm text-gray-500" id="hh2">Personal details and application.</p>
+                </div>
+                <button type="button" onclick="toggleModal('add-meter-modal')" class="h-fit px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                  Update
+                </button>
+              </div>
             </div>
             <!-- Details Tab -->
             <div id="p1" class="mt-5 border-t border-gray-200">
@@ -59,27 +66,21 @@
                   <dt class="text-sm font-medium text-gray-500">Full Name</dt>
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="peter" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64"></span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
                 <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
                   <dt class="text-sm font-medium text-gray-500">Phone</dt>
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="3452355" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64" style="border:none;"></span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
                 <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
                   <dt class="text-sm font-medium text-gray-500">Email Address</dt>
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="margotfoster@example.com" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64" style="border:none;"></span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
                 </li>
@@ -95,45 +96,35 @@
                   <dt class="text-sm font-medium text-gray-500">Consumer ID</dt>
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="324423242" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64" style="border:none;"></span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
                 <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
                   <dt class="text-sm font-medium text-gray-500">Connection Type</dt>
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="Domestic" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64" style="border:none;"></span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
                 <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
                   <dt class="text-sm font-medium text-gray-500">Address</dt>
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="h.no margao panaji goa" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64" style="border:none;"></span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
                 <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
                   <dt class="text-sm font-medium text-gray-500">Phase</dt>
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="Phase-1" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64" style="border:none;"></span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
                 <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
                   <dt class="text-sm font-medium text-gray-500">Connection Status</dt>
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="active" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64" style="border:none;"></span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
                 <div class="py-4 sm:grid sm:py-5 sm:grid-cols-3 sm:gap-4">
@@ -141,9 +132,7 @@
                   <dd class="mt-1 flex text-sm text-gray-900 sm:mt-0 sm:col-span-2">
                     <span class="flex-grow"><input type="text" outline="none" value="1/1/2022" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-64" style="border:none;">
                     </span>
-                    <span class="ml-4 flex-shrink-0">
-                      <button type="button" class="bg-white rounded-md font-medium text-indigo-600 hover:text-indigo-500">Update</button>
-                    </span>
+                  
                   </dd>
                 </div>
             </div>
@@ -169,6 +158,8 @@
                                 Current Reading</th>
                               <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                 Amount</th>
+                              <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                                Status</th>
                               <th scope="col" class="relative px-6 py-3">
                               </th>
                             </tr>
@@ -181,10 +172,40 @@
                               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="1/1/2022" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
                               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="44432" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
                               <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="$21" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
-                              <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                                <a href="#" class="text-indigo-600 hover:text-indigo-500">Update</a>
-                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-red-100 text-red-800"> Unpaid </span></td>
+                             
                             </tr>
+                            <tr>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <input type="text" outline="none" value="21" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="1/1/2022" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="44432" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="$21" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> Paid </span></td>
+                             
+                            </tr>
+                            <tr>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <input type="text" outline="none" value="21" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="1/1/2022" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="44432" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="$21" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> Paid </span></td>
+                             
+                            </tr>
+                            <tr>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                                <input type="text" outline="none" value="21" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;">
+                              </td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="1/1/2022" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="44432" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><input type="text" outline="none" value="$21" class="focus:outline-none focus:ring focus:border-indigo-600 rounded p-1 outline-offset-2 w-auto" style="border:none;"></td>
+                              <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500"><span class="px-2 inline-flex text-xs leading-5 font-semibold rounded-full bg-green-100 text-green-800"> Paid </span></td>
+                             
+                            </tr>
+
                           </tbody>
                         </table>
                       </div>
