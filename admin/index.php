@@ -14,25 +14,11 @@
   <!-- MAIN CONTENT -->
   <main class="bg-gray-100 h-screen flex-1">
     <div class="py-6">
-      <div class="flex justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-4">
         <h1 class="text-2xl mb-2 font-semibold text-gray-900">
           New Consumers
         </h1>
-        <div>
-          <div class="mt-1 flex rounded-md shadow-sm">
-            <div class="relative flex items-stretch flex-grow focus-within:z-10">
-              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-gray-400">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                </svg>
-              </div>
-              <input type="email" name="email" id="email" class="border border-solid border-gray-300 outline-indigo-200 block w-full rounded-none rounded-l-md pl-10" placeholder="Search candidates" />
-            </div>
-            <button type="button" class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
-              <span>Search</span>
-            </button>
-          </div>
-        </div>
+
       </div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div class="flex flex-col">
@@ -47,9 +33,6 @@
                       </th>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Name
-                      </th>
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Email
                       </th>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Address
@@ -85,38 +68,20 @@
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         1234567890
                       </td>
-                      <<<<<<< HEAD=======<td class="px-6 py-4 whitespace-nowrap text-right">
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        North Goa
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        Phase 3
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        Commercial
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-right">
                         <button type="button" onclick="toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                           Approve
                         </button>
                         <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                          Reject
-                        </button>
-                        </td>
-                    </tr>
-                    <tr>
-                      <input type="text" value="1" id="con-id" />
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        01
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        Jane Cooper
-                      </td>
-                      >>>>>>> 48ad2691aeaf1bd9a35daafb067577f6bb84d34b
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        North-Goa
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        Phase 1
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        Industrial
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right">
-                        <button type="button" onclick="toggleModal('add-meter-modal'); populateForm('<?php echo "123" ?>');" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                          Approve
-                        </button>
-                        <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
                           Reject
                         </button>
                       </td>
@@ -141,9 +106,9 @@
       <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
           <div class="mt-3 text-center sm:mt-0 sm:text-left">
-            <form class="space-y-8 divide-y divide-gray-200">
-              <input type="text" value="" id="consumer-id" />
-              <div class="space-y-4 divide-y divide-gray-200">
+            <form class="">
+              <input type="text" class="hidden" value="" id="consumer-id" />
+              <div class="divide-y divide-gray-200">
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                   Add meter
                 </h3>

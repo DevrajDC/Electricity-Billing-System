@@ -14,25 +14,10 @@
   <!-- MAIN CONTENT -->
   <main class="flex-1">
     <div class="py-6">
-      <div class="flex justify-between max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-4">
+      <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8 mb-4">
         <h1 class="text-2xl mb-2 font-semibold text-gray-900">
           Distributors
         </h1>
-        <div>
-          <div class="mt-1 flex rounded-md shadow-sm">
-            <div class="relative flex items-stretch flex-grow focus-within:z-10">
-              <div class="absolute inset-y-0 left-0 pl-3 flex items-center pointer-events-none">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-5 w-5 text-gray-400">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
-                </svg>
-              </div>
-              <input type="email" name="email" id="email" class="border border-solid border-gray-300 outline-indigo-200 block w-full rounded-none rounded-l-md pl-10" placeholder="Search candidates" />
-            </div>
-            <button type="button" class="-ml-px relative inline-flex items-center space-x-2 px-4 py-2 border border-gray-300 text-sm font-medium rounded-r-md text-white bg-indigo-500 hover:bg-indigo-600 focus:outline-none focus:ring-1 focus:ring-indigo-500 focus:border-indigo-500">
-              <span>Search</span>
-            </button>
-          </div>
-        </div>
       </div>
       <div class="max-w-7xl mx-auto px-4 sm:px-6 md:px-8">
         <div class="flex flex-col">
@@ -109,15 +94,21 @@
                   Edit Distributor
                 </h3>
 
-                <div class="mt-2 pt-4 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
-                  <div class="sm:col-span-3">
-                    <label for="first-name" class="block text-sm font-medium text-gray-700 mb-2">
+                <div class="mt-2 pt-4 grid grid-cols-1 gap-y-6 gap-x-4">
+                  <div class="">
+                    <label for="provider-id" class="block text-sm font-medium text-gray-700 mb-2">
+                      Provider ID
+                    </label>
+                    <input type="text" name="name" id="name" placeholder="Provider ID" value="01234" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2 block w-full sm:text-sm border-gray-300 rounded-md border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
+                  </div>
+                  <div class="">
+                    <label for="name" class="block text-sm font-medium text-gray-700 mb-2">
                       Name
                     </label>
-                    <input type="text" name="name" id="name" placeholder="Name" value="Jane Cooper" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2 block w-full sm:text-sm border-gray-300 rounded-md border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
+                    <input type="text" name="region" id="provisions" placeholder="Full Name" value="Jane Cooper" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2 block w-full sm:text-sm border-gray-300 rounded-md border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
                   </div>
-                  <div class="sm:col-span-3">
-                    <label for="country" class="block text-sm font-medium text-gray-700 mb-2">
+                  <div class="">
+                    <label for="region" class="block text-sm font-medium text-gray-700 mb-2">
                       Region
                     </label>
                     <input type="text" name="region" id="provisions" placeholder="Region" value="Goa" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2 block w-full sm:text-sm border-gray-300 rounded-md border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
