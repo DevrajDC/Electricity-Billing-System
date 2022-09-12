@@ -16,7 +16,7 @@
             <div id="img" class="hidden bg-cover lg:block lg:w-2/3" style="transition: all 0.5s; background-image: url(https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)">
                 <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                     <div>
-                        <h2 class="font-bold text-white text-2xl mb-4 ">Oneshield EBS</h2>
+                        <h2 class="font-bold text-white text-2xl mb-8 ">Oneshield EBS</h2>
 
                         <p class="max-w-xl mt-3 text-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
                             In autem ipsa, nulla laboriosam dolores, repellendus perferendis libero suscipit nam
@@ -25,26 +25,20 @@
                 </div>
             </div>
             <!-- nav -->
-            <div class="flex flex-col items-center w-full max-w-md px-6 mx-auto lg:w-2/6">
+            <div class="max-w-md px-6 mx-auto lg:mt-64 sm:mt-2">
                 <!-- enter nav -->
-
-
-                <div class="flex-1 mt-6">
-                    <h2 class=" mt-4 font-bold text-center text-indigo-600 text-4xl mb-4">Oneshield EBS</h2>
-
-
+                <div class="">
+                    <h2 class=" mt-4 font-bold text-center text-indigo-600 text-4xl mb-8">Oneshield EBS</h2>
                     <!-- Tabs at small breakpoint and up -->
-                    <div class="hidden sm:block flex">
-                        <nav>
-                            <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
-                            <a id="nm1" href="#" class="menu3 bg-indigo-100 border-indigo-500 text-indigo-600 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm" onclick="navcolor('nm1','nm2','','menu3 bg-indigo-100 border-indigo-500 text-indigo-600 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm', 'menu2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm')
+                    <nav>
+                        <!-- Current: "border-indigo-500 text-indigo-600", Default: "border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300" -->
+                        <a id="nm1" href="#" class="menu3 bg-indigo-100 border-indigo-500 text-indigo-600 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm" onclick="navcolor('nm1','nm2','','menu3 bg-indigo-100 border-indigo-500 text-indigo-600 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm', 'menu2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm')
                                 ,changeslide('l1','l2','')">
-                                Login </a>
+                            Login </a>
 
-                            <a id="nm2" href="#" class=" menu2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm" onclick="navcolor('nm2','nm1','','menu3 bg-indigo-100 border-indigo-500 text-indigo-600 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm', 'menu2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm'),changeslide('l2','l1','')">
-                                Register </a>
-                        </nav>
-                    </div>
+                        <a id="nm2" href="#" class=" menu2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm" onclick="navcolor('nm2','nm1','','menu3 bg-indigo-100 border-indigo-500 text-indigo-600 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm', 'menu2 border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300 whitespace-nowrap pt-2 pb-2 px-12 border-b-2 font-medium text-sm'),changeslide('l2','l1','')">
+                            Register </a>
+                    </nav>
                     <!-- sign in -->
                     <div id="l1" class="mt-8">
                         <form id="l1" action="#" method="POST" class="space-y-6 pr">
@@ -87,9 +81,10 @@
 
                     <!-- register -->
                     <form id="l2" style="display:none;" action="#" method="POST" class="space-y-4 pr mt-8">
-                        <div class="mt-4" style="opacity:0;animation-name:changeform; animation-delay:0s; animation-duration: 1s; animation-timing-function:ease-in;animation-fill-mode: forwards;">
-                            <label for="email" class="block text-sm font-medium text-gray-700"> Email address </label>
-                            <div class="">
+                        <div style="opacity:0; animation-name:changeform; animation-delay:0s; animation-duration: 1s;animation-timing-function:ease-in;animation-fill-mode: forwards;">
+                            <label for="email" class="block text-sm font-medium text-gray-700"> Email address
+                            </label>
+                            <div class="mt-1">
                                 <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                         </div>
@@ -104,13 +99,6 @@
                             <label for="email" class="block text-sm font-medium text-gray-700"> Phone </label>
                             <div class="mt-1">
                                 <input id="email" name="email" type="number" autocomplete="email" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                            </div>
-                        </div>
-
-                        <div style="opacity:0; animation-name:changeform; animation-delay:0.09s; animation-duration: 1s; animation-timing-function:ease-in;animation-fill-mode: forwards;">
-                            <label for="email" class="block text-sm font-medium text-gray-700"> Address </label>
-                            <div class="mt-1">
-                                <input id="email" name="email" type="email" autocomplete="email" required class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
                             </div>
                         </div>
 
