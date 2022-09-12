@@ -49,13 +49,19 @@
                         Name
                       </th>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
-                        Email
-                      </th>
-                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Address
                       </th>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Phone no.
+                      </th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Region
+                      </th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
+                        Phase
+                      </th>
+                      <th scope="col" class="px-6 py-3 text-left text-xs font-medium whitespace-nowrap text-gray-500 uppercase tracking-wider">
+                        Conn Type
                       </th>
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider"></th>
                     </tr>
@@ -66,10 +72,7 @@
                         01
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        Jane Cooper
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        jane.cooper@example.com
+                        Jane Cooper <br> <span class="text-sm text-gray-500">jane.cooper@example.com</span>
                       </td>
                       <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
                         Lorem ipsum dolor sit amet consectetur,
@@ -78,120 +81,21 @@
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
                         1234567890
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        North-Goa
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        Phase 1
+                      </td>
+                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                        Industrial
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-right">
                         <button type="button" onclick="toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
                           Approve
                         </button>
                         <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500">
-                          Reject
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        01
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        Jane Cooper
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        jane.cooper@example.com
-                      </td>
-                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Officiis non libero saepe
-                        officia culpa iure quidem in, optio dicta
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        1234567890
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right">
-                        <button type="button" onclick="toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                          Approve
-                        </button>
-                        <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                          Reject
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        01
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        Jane Cooper
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        jane.cooper@example.com
-                      </td>
-                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Officiis non libero saepe
-                        officia culpa iure quidem in, optio dicta
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        1234567890
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right">
-                        <button type="button" onclick="toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                          Approve
-                        </button>
-                        <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                          Reject
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        01
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        Jane Cooper
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        jane.cooper@example.com
-                      </td>
-                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Officiis non libero saepe
-                        officia culpa iure quidem in, optio dicta
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        1234567890
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right">
-                        <button type="button" onclick="toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                          Approve
-                        </button>
-                        <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                          Reject
-                        </button>
-                      </td>
-                    </tr>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        01
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        Jane Cooper
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        jane.cooper@example.com
-                      </td>
-                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                        Lorem ipsum dolor sit amet consectetur,
-                        adipisicing elit. Officiis non libero saepe
-                        officia culpa iure quidem in, optio dicta
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        1234567890
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right">
-                        <button type="button" onclick="toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                          Approve
-                        </button>
-                        <button type="button" onclick="toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
                           Reject
                         </button>
                       </td>
@@ -222,7 +126,7 @@
                   Add meter
                 </h3>
 
-                <div class="mt-2 pt-6 grid grid-cols-1 gap-y-6 gap-x-4 sm:grid-cols-6">
+                <div class="mt-2 pt-6 grid grid-cols-1 gap-y-6 gap-x-4">
                   <div class="sm:col-span-3">
                     <label for="first-name" class="block text-sm font-medium text-gray-700">
                       Meter No.
@@ -232,7 +136,7 @@
                     </div>
                   </div>
 
-                  <div class="sm:col-span-3">
+                  <!-- <div class="sm:col-span-3">
                     <label for="country" class="block text-sm font-medium text-gray-700">
                       Select Phase
                     </label>
@@ -243,19 +147,19 @@
                         <option value="phase2">phase3</option>
                       </select>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="sm:col-span-3">
                     <label for="country" class="block text-sm font-medium text-gray-700">
                       Connection Status
                     </label>
                     <div class="mt-1">
-                      <select class="form-select appearance-none block w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" aria-label="Default select example">
-                        <option value="Active">Active</option>
-                        <option value="Inactive">Inactive</option>
+                      <select class="w-full px-2 py-1.5 text-base font-normal text-gray-700 bg-white border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
+                        <option value="pending">Active</option>
+                        <option value="resolved">Inactive</option>
                       </select>
                     </div>
                   </div>
-                  <div class="sm:col-span-3">
+                  <!-- <div class="sm:col-span-3">
                     <label for="country" class="block text-sm font-medium text-gray-700">
                       Connection type
                     </label>
@@ -267,7 +171,7 @@
                         <option value="Industrial">Agricultural</option>
                       </select>
                     </div>
-                  </div>
+                  </div> -->
                   <div class="sm:col-span-3">
                     <label for="country" class="block text-sm font-medium text-gray-700">
                       Connection date
