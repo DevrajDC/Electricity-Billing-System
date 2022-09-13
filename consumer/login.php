@@ -6,10 +6,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tailwindcss.com"></script>
+    
     <link rel="stylesheet" href="styler.css" type="text/css">
     <title>Document</title>
 </head>
-<body>
+    <body> 
     <div class="bg-white">
         <div class="flex justify-center h-screen">
             <div id="img" class="hidden bg-cover lg:block lg:w-2/3" style="transition: all 0.5s; background-image: url(https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)">
