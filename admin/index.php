@@ -1,6 +1,10 @@
 <?php
 include("./includes/navbar.php");
 include("./includes/dbConnection.php");
+if (!isset($_SESSION["is_admin"])) {
+  echo "<script>window.location.href='../login.php';</script>";
+}
+
 ?>
 
 <div class="md:pl-64 flex flex-col flex-1">
