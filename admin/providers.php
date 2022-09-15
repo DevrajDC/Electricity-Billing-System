@@ -1,6 +1,6 @@
-<?php 
-  include("./includes/navbar.php");
-  include("./includes/dbConnection.php");
+<?php
+include("./includes/navbar.php");
+include("./includes/dbConnection.php");
 ?>
 <div class="md:pl-64 flex flex-col flex-1">
   <div class="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-gray-100">
@@ -44,35 +44,35 @@
                     </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
-                    <?php 
-                      $quer = "SELECT * FROM provider";
-                      $result = $conn->query($quer);
-                      while($row = $result->fetch_assoc()) {
-                        $enb = $row["status"] == 'Inactive' ? 'inline-block' : 'none';
-                        $disb = $row["status"] == 'Inactive' ? 'none' : 'inline-block';      
-                        echo "<script>console.log('enb: $enb');</script>";
-                        echo "<script>console.log('disb: $disb');</script>";                
-                    ?>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        <?php echo $row["provider_id"]; ?>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        <?php echo $row["name"]; ?>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <?php echo $row["num_provisions"]; ?>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
-                        <button type="button" onclick="providerEditForm('<?php echo $row['provider_id']; ?>', '<?php echo $row['name']; ?>', '<?php echo $row['num_provisions']; ?>'); toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                          Edit
-                        </button>
-                        <button style="display: <?php echo $disb; ?>;" type="button" onclick="providerToggleForm('<?php echo $row['provider_id']; ?>', '<?php echo $row['status']; ?>' ,'Disable', 'Are you sure you want to Disable this Account?'); toggleModal('Delete-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Disable</button>
-                        <button style="display: <?php echo $enb; ?>;" type="button" onclick="providerToggleForm('<?php echo $row['provider_id']; ?>', '<?php echo $row['status']; ?>' ,'Enable', 'Are you sure you want to Enable this Account?'); toggleModal('Delete-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enable</button>
-                      </td>
-                    </tr>
                     <?php
-                      }
+                    $quer = "SELECT * FROM provider";
+                    $result = $conn->query($quer);
+                    while ($row = $result->fetch_assoc()) {
+                      $enb = $row["status"] == 'Inactive' ? 'inline-block' : 'none';
+                      $disb = $row["status"] == 'Inactive' ? 'none' : 'inline-block';
+                      echo "<script>console.log('enb: $enb');</script>";
+                      echo "<script>console.log('disb: $disb');</script>";
+                    ?>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <?php echo $row["provider_id"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <?php echo $row["name"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <?php echo $row["num_provisions"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                          <button type="button" onclick="providerEditForm('<?php echo $row['provider_id']; ?>', '<?php echo $row['name']; ?>', '<?php echo $row['num_provisions']; ?>'); toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Edit
+                          </button>
+                          <button style="display: <?php echo $disb; ?>;" type="button" onclick="providerToggleForm('<?php echo $row['provider_id']; ?>', '<?php echo $row['status']; ?>' ,'Disable', 'Are you sure you want to Disable this Account?'); toggleModal('Delete-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Disable</button>
+                          <button style="display: <?php echo $enb; ?>;" type="button" onclick="providerToggleForm('<?php echo $row['provider_id']; ?>', '<?php echo $row['status']; ?>' ,'Enable', 'Are you sure you want to Enable this Account?'); toggleModal('Delete-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Enable</button>
+                        </td>
+                      </tr>
+                    <?php
+                    }
                     ?>
                   </tbody>
                 </table>
@@ -91,11 +91,11 @@
   <div class="fixed inset-0 z-10 overflow-y-auto">
     <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
       <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-        <form class="space-y-8 divide-y divide-gray-200" method="post" action="includes/CRUD.php?action=editProvider">
+        <form class="space-y-8 divide-y divide-gray-200" method="post" action="includes/CRUD.php?action=editProvider" onsubmit="return validateEditProvider()">
           <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div class="mt-3 text-center sm:mt-0 sm:text-left">
               <div class="space-y-4 divide-y divide-gray-200">
-                <input type="text" hidden id="provider-id" name="provider-id"/>
+                <input type="text" hidden id="provider-id" name="provider-id" />
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                   Edit Provider
                 </h3>
@@ -105,15 +105,17 @@
                       Name
                     </label>
                     <input type="text" name="provider-name" id="provider-name" value="" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2 block w-full sm:text-sm border-gray-300 rounded-md border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
+                    <small class="text-red-400"></small>
                   </div>
                   <div class="sm:col-span-3">
                     <label for="country" class="block text-sm font-medium text-gray-700 mb-2">
                       No of Provisions
                     </label>
                     <input type="number" name="provisions" id="provisions" value="" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 px-3 py-2 block w-full sm:text-sm border-gray-300 rounded-md border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none" />
+                    <small class="text-red-400"></small>
                   </div>
                 </div>
-              </div>    
+              </div>
             </div>
           </div>
           <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
@@ -135,10 +137,10 @@
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
 
     <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-      <form action="includes/CRUD.php?action=toggleProvider" method="post">  
+      <form action="includes/CRUD.php?action=toggleProvider" method="post">
         <div class="sm:flex sm:items-start">
-          <input type="text" hidden id="provider-disable-id" name="provider-disable-id"/>    
-          <input type="text" hidden id="provider-status" name="provider-status"/>    
+          <input type="text" hidden id="provider-disable-id" name="provider-disable-id" />
+          <input type="text" hidden id="provider-status" name="provider-status" />
           <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
             <!-- Heroicon name: outline/exclamation -->
             <svg class="h-6 w-6 text-red-600" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -153,7 +155,7 @@
           </div>
         </div>
         <div class="mt-5 sm:mt-4 sm:ml-10 sm:pl-4 sm:flex">
-          <input type="submit" name="toggleProvider" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:w-auto sm:text-sm" value="Submit"> 
+          <input type="submit" name="toggleProvider" class="inline-flex justify-center w-full rounded-md border border-transparent shadow-sm px-4 py-2 bg-red-600 text-base font-medium text-white hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500 sm:w-auto sm:text-sm" value="Submit">
           <button onclick="toggleModal('Delete-modal')" type="button" class="mt-3 w-full inline-flex justify-center rounded-md border border-gray-300 px-4 py-2 bg-white text-base font-medium text-gray-700 shadow-sm hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 sm:mt-0 sm:ml-3 sm:w-auto sm:text-sm">
             Cancel
           </button>

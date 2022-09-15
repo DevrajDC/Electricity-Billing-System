@@ -1,26 +1,41 @@
-var jQueryScript = document.createElement('script');  
-jQueryScript.setAttribute('src','https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+var jQueryScript = document.createElement("script");
+jQueryScript.setAttribute(
+  "src",
+  "https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"
+);
 document.head.appendChild(jQueryScript);
 
-function meterToggleForm(meter_num, consumer_name, consumer_id, conn_status, modal_title, modal_message) {
-  document.getElementById("meter-num").value = "";   
-  document.getElementById("consumer-name").value = "";   
-  document.getElementById("consumer-id").value = "";   
-  document.getElementById("conn-status").value = "";  
-  document.getElementById("modal-title").innerHTML = "";   
-  document.getElementById("modal-message").innerHTML = "";  
-     
+function meterToggleForm(
+  meter_num,
+  consumer_name,
+  consumer_id,
+  conn_status,
+  modal_title,
+  modal_message
+) {
+  document.getElementById("meter-num").value = "";
+  document.getElementById("consumer-name").value = "";
+  document.getElementById("consumer-id").value = "";
+  document.getElementById("conn-status").value = "";
+  document.getElementById("modal-title").innerHTML = "";
+  document.getElementById("modal-message").innerHTML = "";
+
   document.getElementById("meter-num").value = meter_num;
-  document.getElementById("consumer-name").value = consumer_name;   
-  document.getElementById("consumer-id").value = consumer_id;   
-  document.getElementById("conn-status").value = conn_status;  
-  document.getElementById("modal-title").innerHTML = modal_title;   
-  document.getElementById("modal-message").innerHTML = modal_message;  
-  
+  document.getElementById("consumer-name").value = consumer_name;
+  document.getElementById("consumer-id").value = consumer_id;
+  document.getElementById("conn-status").value = conn_status;
+  document.getElementById("modal-title").innerHTML = modal_title;
+  document.getElementById("modal-message").innerHTML = modal_message;
 }
 
 //populate data to form on click of edit button using javascript
-function populateUserRequestForm(consumer_id, address, region, phase_id, conn_type) {
+function populateUserRequestForm(
+  consumer_id,
+  address,
+  region,
+  phase_id,
+  conn_type
+) {
   // populate id to hidden field to value
   document.getElementById("consumer-id").value = 0;
   document.getElementById("consumer-address").value = "";
@@ -30,16 +45,16 @@ function populateUserRequestForm(consumer_id, address, region, phase_id, conn_ty
 
   {
     $.ajax({
-      type: 'post',
-      url: 'includes/CRUD.php?action=getDist',
+      type: "post",
+      url: "includes/CRUD.php?action=getDist",
       data: {
-        region: region
+        region: region,
       },
       success: function (response) {
-        document.getElementById("distributor").innerHTML="";
+        document.getElementById("distributor").innerHTML = "";
         console.log(response);
-        document.getElementById("distributor").innerHTML=response; 
-      }
+        document.getElementById("distributor").innerHTML = response;
+      },
     });
   }
 
@@ -51,7 +66,7 @@ function populateUserRequestForm(consumer_id, address, region, phase_id, conn_ty
 }
 
 function userRequestDeleteForm(data) {
-  document.getElementById("userreq-delete-id").value = "";    
+  document.getElementById("userreq-delete-id").value = "";
   document.getElementById("userreq-delete-id").value = data;
 }
 
@@ -62,7 +77,7 @@ function distributorEditForm(data1, data2, data3, data4) {
   document.getElementById("provider-id").value = "";
   document.getElementById("name").value = "";
   document.getElementById("region").value = "";
-  
+
   document.getElementById("distributor-id").value = data1;
   document.getElementById("provider-id").value = data2;
   document.getElementById("name").value = data3;
@@ -72,7 +87,7 @@ function distributorEditForm(data1, data2, data3, data4) {
 //populate data to form on click of edit button using javascript
 function distributorDeleteForm(data) {
   // populate id to hidden field to value
-  document.getElementById("distributor-delete-id").value = "";    
+  document.getElementById("distributor-delete-id").value = "";
   document.getElementById("distributor-delete-id").value = data;
 }
 
@@ -82,7 +97,7 @@ function providerEditForm(data1, data2, data3) {
   document.getElementById("provider-id").value = "";
   document.getElementById("provider-name").value = "";
   document.getElementById("provisions").value = "";
-  
+
   document.getElementById("provider-id").value = data1;
   document.getElementById("provider-name").value = data2;
   document.getElementById("provisions").value = data3;
@@ -91,28 +106,28 @@ function providerEditForm(data1, data2, data3) {
 //populate data to form on click of edit button using javascript
 function providerToggleForm(provider_id, status, modal_title, modal_message) {
   // populate id to hidden field to value
-  document.getElementById("provider-disable-id").value = 0;    
-  document.getElementById("provider-status").value = "";    
-  document.getElementById("modal-title").innerHTML = "";    
-  document.getElementById("modal-message").innerHTML = "";    
-  
+  document.getElementById("provider-disable-id").value = 0;
+  document.getElementById("provider-status").value = "";
+  document.getElementById("modal-title").innerHTML = "";
+  document.getElementById("modal-message").innerHTML = "";
+
   document.getElementById("provider-disable-id").value = provider_id;
   document.getElementById("provider-status").value = status;
-  document.getElementById("modal-title").innerHTML = modal_title;    
-  document.getElementById("modal-message").innerHTML = modal_message;    
+  document.getElementById("modal-title").innerHTML = modal_title;
+  document.getElementById("modal-message").innerHTML = modal_message;
 }
 
 function distToggleForm(dist_id, status, modal_title, modal_message) {
   // populate id to hidden field to value
-  document.getElementById("distributor-diable-id").value = 0;    
-  document.getElementById("distributor-status").value = "";    
-  document.getElementById("modal-title").innerHTML = "";    
-  document.getElementById("modal-message").innerHTML = "";    
-  
+  document.getElementById("distributor-diable-id").value = 0;
+  document.getElementById("distributor-status").value = "";
+  document.getElementById("modal-title").innerHTML = "";
+  document.getElementById("modal-message").innerHTML = "";
+
   document.getElementById("distributor-diable-id").value = dist_id;
   document.getElementById("distributor-status").value = status;
-  document.getElementById("modal-title").innerHTML = modal_title;    
-  document.getElementById("modal-message").innerHTML = modal_message;    
+  document.getElementById("modal-title").innerHTML = modal_title;
+  document.getElementById("modal-message").innerHTML = modal_message;
 }
 
 function toggleModal(modalID) {
@@ -126,38 +141,34 @@ function toggleModal(modalID) {
 var toggleitem = 1;
 function showhide(num) {
   if (toggleitem == 0) {
-      document.getElementById("sub-menu-" + num).style.display = "none";
-      toggleitem = 1;
-  }
-  else {
-      document.getElementById("sub-menu-" + num).style.display = "block";
-      toggleitem = 0;
+    document.getElementById("sub-menu-" + num).style.display = "none";
+    toggleitem = 1;
+  } else {
+    document.getElementById("sub-menu-" + num).style.display = "block";
+    toggleitem = 0;
   }
 }
 
 function changeslide(pagename1, pagemame2, pagename3) {
-
   document.getElementById(pagename1).style.display = "block";
   document.getElementById(pagemame2).style.display = "none";
-  if (pagename3 != '')
-      document.getElementById(pagename3).style.display = "none";
+  if (pagename3 != "")
+    document.getElementById(pagename3).style.display = "none";
 }
-function changename(p1, bt1, bt2 ,bt3) {
-  document.getElementById('hh1').innerHTML = p1;
-  document.getElementById(bt1).style.display= 'block';
-  document.getElementById(bt2).style.display= 'none';
-  document.getElementById(bt3).style.display= 'none';
+function changename(p1, bt1, bt2, bt3) {
+  document.getElementById("hh1").innerHTML = p1;
+  document.getElementById(bt1).style.display = "block";
+  document.getElementById(bt2).style.display = "none";
+  document.getElementById(bt3).style.display = "none";
 }
-function navcolor(j1, j2, j3,style1,style2) {
+function navcolor(j1, j2, j3, style1, style2) {
   document.getElementById(j1).className = style1;
   document.getElementById(j2).className = style2;
-  if (j3 != '')
-      document.getElementById(j3).className = style2;
+  if (j3 != "") document.getElementById(j3).className = style2;
 }
 
-
 //  function screenchange()
-//  { 
+//  {
 //     console.log('a');
 //    var imagesbg=Array("url(../assets/Electricity.jpg)","url(../assets/OIP.jpg)");
 //    console.log('a');
@@ -166,8 +177,19 @@ function navcolor(j1, j2, j3,style1,style2) {
 //     setTimeout(,3000);
 // }
 var i = 0;
-var imagesbg = Array("url(https://paytmblogcdn.paytm.com/wp-content/uploads/2021/07/picked-ElectricityBill_39_How-to-Change-Name-in-Electricity-Bill-800x500.jpg)", "url(https://www.edx.org/static/6ff7a7d18d6e835f4608aefcd96e25ae/learn_electricity.jpg)", "url(https://sites.google.com/a/thapar.edu/pee-107/_/rsrc/1504180556705/home/tvss-lightning.jpg?height=266&width=400)");
-setInterval(() => { console.log(document.getElementById('img').style.backgroundImage); document.getElementById('img').style.backgroundImage = imagesbg[i]; i++; if(i==3){i=0;} }, 3000);
+var imagesbg = Array(
+  "url(https://paytmblogcdn.paytm.com/wp-content/uploads/2021/07/picked-ElectricityBill_39_How-to-Change-Name-in-Electricity-Bill-800x500.jpg)",
+  "url(https://www.edx.org/static/6ff7a7d18d6e835f4608aefcd96e25ae/learn_electricity.jpg)",
+  "url(https://sites.google.com/a/thapar.edu/pee-107/_/rsrc/1504180556705/home/tvss-lightning.jpg?height=266&width=400)"
+);
+setInterval(() => {
+  console.log(document.getElementById("img").style.backgroundImage);
+  document.getElementById("img").style.backgroundImage = imagesbg[i];
+  i++;
+  if (i == 3) {
+    i = 0;
+  }
+}, 3000);
 
 //Show input error messages
 function showError(input, message) {
@@ -183,7 +205,7 @@ function getFieldName(input) {
 }
 
 function validatelogin() {
-  console.log("login")
+  console.log("login");
   const email = document.getElementById("email");
   const password = document.getElementById("password");
   var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
@@ -204,7 +226,7 @@ function validatelogin() {
 }
 
 function validateReg() {
-  console.log("validate")
+  console.log("validate");
   const email = document.getElementById("email1");
   const name = document.getElementById("name");
   const password = document.getElementById("password1");
@@ -233,6 +255,70 @@ function validateReg() {
     return false;
   } else {
     showError(password, "");
+  }
+  return true;
+}
+
+//validate add meter form
+function validateAddMeter() {
+  const meterNumber = document.getElementById("meter-no");
+  const conDate = document.getElementById("conn_date");
+
+  if (meterNumber.value.length === 0) {
+    showError(meterNumber, "please enter meter number");
+    return false;
+  } else {
+    showError(meterNumber, "");
+  }
+
+  if (conDate.value.length === 0) {
+    showError(conDate, "please enter connection date");
+    return false;
+  } else {
+    showError(conDate, "");
+  }
+
+  return false;
+}
+
+//validate edit distributor
+function validateEditDistributor() {
+  const name = document.getElementById("name");
+  const region = document.getElementById("region");
+
+  if (name.value.length === 0) {
+    showError(name, "please enter name");
+    return false;
+  } else {
+    showError(name, "");
+  }
+
+  if (region.value.length === 0) {
+    showError(region, "please enter region");
+    return false;
+  } else {
+    showError(region, "");
+  }
+
+  return true;
+}
+
+function validateEditProvider() {
+  const provider_name = document.getElementById("provider-name");
+  const provisions = document.getElementById("provisions");
+
+  if (provider_name.value.length === 0) {
+    showError(provider_name, "please enter provider name");
+    return false;
+  } else {
+    showError(provider_name, "");
+  }
+
+  if (provisions.value.length === 0) {
+    showError(provisions, "please enter provisions");
+    return false;
+  } else {
+    showError(provisions, "");
   }
   return true;
 }
