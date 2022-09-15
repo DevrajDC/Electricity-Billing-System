@@ -1,5 +1,8 @@
 <?php
 
+define("METERNUMBER", 0);
+define("CURRENT_READ", 1);
+define("PREV_READ", 2);
 $servername = "localhost";
 $username = "root";
 $password = "";
@@ -139,7 +142,7 @@ if(isset($_FILES['flat_file'])) {
     if (($handle = fopen($fileTmpPath, "r")) !== FALSE) {
       while (($data = fgetcsv($handle, 1000, ",")) !== FALSE) {
         $row++;
-        $meter_num = $data[0];
+        $meter_num = $data[METERNUMBER];
         // echo "<BR><BR>Meter: " . $meter_num . "<BR>";
         $consumer_id = 0;
         $prev_dues = 0;
@@ -156,8 +159,8 @@ if(isset($_FILES['flat_file'])) {
           echo "<BR><BR>0 results<BR><BR>";
         }
 
-        $current_reading = $data[1];
-        $prev_reading = $data[2];
+        $current_reading = $data[CURRENT_READ];
+        $prev_reading = $data[PREV_READ];
         $charges = calculateCharges($meter_num, $current_reading - $prev_reading) + $prev_dues;
         $bill_date = date("Y-m-d");
         $due_date = Date('Y-m-d', strtotime('+20 days'));
@@ -214,16 +217,22 @@ if(isset($_FILES['flat_file'])) {
     // } else {
     //   echo 'Upload failed. Allowed file types: ' . implode(',', $allowedfileExtensions);
     // }
+    
+    echo "<script>
+    alert('Records Inserted Successfully');
+    window.location.href='index.php';
+    </script>";
   } else {
     echo "<script>
     alert('Error with file');
+    window.location.href='index.php';
     </script>";
   }
+} else {
+  echo "<script>
+  alert('File not sent to server');
+  window.location.href='index.php';
+  </script>";
 }
-
-echo "<script>
-alert('Records Inserted Successfully');
-window.location.href='../admin/index.php';
-</script>";
 die();
 ?>

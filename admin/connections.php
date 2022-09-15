@@ -1,4 +1,7 @@
-<?php include("includes/navbar.php"); ?>
+<?php 
+  include("includes/navbar.php"); 
+  include("includes/dbConnection.php");   
+?>
 <div class="md:pl-64 flex flex-col flex-1">
   <div class="sticky top-0 z-10 md:hidden pl-1 pt-1 sm:pl-3 sm:pt-3 bg-gray-100">
     <button type="button" class="-ml-0.5 -mt-0.5 h-12 w-12 inline-flex items-center justify-center rounded-md text-gray-500 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-inset focus:ring-indigo-500">
@@ -39,34 +42,46 @@
                       <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                         Number of connections
                       </th>
-
                     </tr>
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
+                    <?php
+                      $quer = "SELECT * FROM Users";
+                      $result = $conn->query($quer);
+                      while($row = $result->fetch_assoc()) {
+                    ?>
                     <tr>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        01
+                        <?php echo $row["consumer_id"]; ?>
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        Jane Cooper
+                        <?php echo $row["name"]; ?>
                       </td>
                       <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        jane.cooper@example.com
+                        <?php echo $row["email"]; ?>
                       </td>
-
                       <td class="px-6 py-4 flex gap-12 whitespace-nowrap text-left">
-                        <a href="consumerdetails.php" class="text-indigo-600 text-sm font-bold">
-                          Meter1
+                        <?php
+                          $id = $row["consumer_id"];
+                          $qr = "SELECT meter_num FROM meterdata WHERE consumer_id = $id";
+                          $res = $conn->query($qr);
+                          $num_meters = mysqli_num_rows($res);
+                          $i = 1;
+                          while($r = $res->fetch_assoc()) {  
+                        ?>  
+                        <a href="consumerdetails.php?meter_num=<?php echo $r["meter_num"]; ?>&consumer_name=<?php echo $row["name"]; ?>&consumer_id=<?php echo $row["consumer_id"]; ?>&bill=none" class="text-indigo-600 text-sm font-bold">
+                          Meter <?php echo $i; ?>
                         </a>
-                        <a href="consumerdetails.php" class="text-indigo-600 text-sm font-bold">
-                          Meter2
-                        </a>
-                        <a href="consumerdetails.php" class="text-indigo-600 text-sm font-bold">
-                          Meter3
-                        </a>
+                        <?php
+                            $i++;
+                          }
+                        ?>
                       </td>
                     </tr>
-                    <!-- /End replace -->
+                    <?php
+                      }
+                    ?>
+                  
               </div>
             </div>
   </main>

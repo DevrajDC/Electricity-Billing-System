@@ -14,7 +14,7 @@ $third_part = $components[3];
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <link rel="stylesheet" href="../../styles.css">
   <script src="https://cdn.tailwindcss.com"></script>
-  <title>Admin | Consumers</title>
+  <title>Admin</title>
 </head>
 <style>
   /* Scrollbar Styling */

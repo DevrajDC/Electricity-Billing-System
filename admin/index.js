@@ -1,9 +1,127 @@
+var jQueryScript = document.createElement('script');  
+jQueryScript.setAttribute('src','https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js');
+document.head.appendChild(jQueryScript);
+
+function meterToggleForm(meter_num, consumer_name, consumer_id, conn_status, modal_title, modal_message) {
+  document.getElementById("meter-num").value = "";   
+  document.getElementById("consumer-name").value = "";   
+  document.getElementById("consumer-id").value = "";   
+  document.getElementById("conn-status").value = "";  
+  document.getElementById("modal-title").innerHTML = "";   
+  document.getElementById("modal-message").innerHTML = "";  
+     
+  document.getElementById("meter-num").value = meter_num;
+  document.getElementById("consumer-name").value = consumer_name;   
+  document.getElementById("consumer-id").value = consumer_id;   
+  document.getElementById("conn-status").value = conn_status;  
+  document.getElementById("modal-title").innerHTML = modal_title;   
+  document.getElementById("modal-message").innerHTML = modal_message;  
+  
+}
+
+//populate data to form on click of edit button using javascript
+function populateUserRequestForm(consumer_id, address, region, phase_id, conn_type) {
+  // populate id to hidden field to value
+  document.getElementById("consumer-id").value = 0;
+  document.getElementById("consumer-address").value = "";
+  document.getElementById("consumer-region").value = "";
+  document.getElementById("consumer-phase_id").value = "";
+  document.getElementById("consumer-conn_type").value = "";
+
+  {
+    $.ajax({
+      type: 'post',
+      url: 'includes/CRUD.php?action=getDist',
+      data: {
+        region: region
+      },
+      success: function (response) {
+        document.getElementById("distributor").innerHTML="";
+        console.log(response);
+        document.getElementById("distributor").innerHTML=response; 
+      }
+    });
+  }
+
+  document.getElementById("consumer-id").value = consumer_id;
+  document.getElementById("consumer-address").value = address;
+  document.getElementById("consumer-region").value = region;
+  document.getElementById("consumer-phase_id").value = phase_id;
+  document.getElementById("consumer-conn_type").value = conn_type;
+}
+
+function userRequestDeleteForm(data) {
+  document.getElementById("userreq-delete-id").value = "";    
+  document.getElementById("userreq-delete-id").value = data;
+}
+
+//populate data to form on click of edit button using javascript
+function distributorEditForm(data1, data2, data3, data4) {
+  // populate id to hidden field to value
+  document.getElementById("distributor-id").value = "";
+  document.getElementById("provider-id").value = "";
+  document.getElementById("name").value = "";
+  document.getElementById("region").value = "";
+  
+  document.getElementById("distributor-id").value = data1;
+  document.getElementById("provider-id").value = data2;
+  document.getElementById("name").value = data3;
+  document.getElementById("region").value = data4;
+}
+
+//populate data to form on click of edit button using javascript
+function distributorDeleteForm(data) {
+  // populate id to hidden field to value
+  document.getElementById("distributor-delete-id").value = "";    
+  document.getElementById("distributor-delete-id").value = data;
+}
+
+//populate data to form on click of edit button using javascript
+function providerEditForm(data1, data2, data3) {
+  // populate id to hidden field to value
+  document.getElementById("provider-id").value = "";
+  document.getElementById("provider-name").value = "";
+  document.getElementById("provisions").value = "";
+  
+  document.getElementById("provider-id").value = data1;
+  document.getElementById("provider-name").value = data2;
+  document.getElementById("provisions").value = data3;
+}
+
+//populate data to form on click of edit button using javascript
+function providerToggleForm(provider_id, status, modal_title, modal_message) {
+  // populate id to hidden field to value
+  document.getElementById("provider-disable-id").value = 0;    
+  document.getElementById("provider-status").value = "";    
+  document.getElementById("modal-title").innerHTML = "";    
+  document.getElementById("modal-message").innerHTML = "";    
+  
+  document.getElementById("provider-disable-id").value = provider_id;
+  document.getElementById("provider-status").value = status;
+  document.getElementById("modal-title").innerHTML = modal_title;    
+  document.getElementById("modal-message").innerHTML = modal_message;    
+}
+
+function distToggleForm(dist_id, status, modal_title, modal_message) {
+  // populate id to hidden field to value
+  document.getElementById("distributor-diable-id").value = 0;    
+  document.getElementById("distributor-status").value = "";    
+  document.getElementById("modal-title").innerHTML = "";    
+  document.getElementById("modal-message").innerHTML = "";    
+  
+  document.getElementById("distributor-diable-id").value = dist_id;
+  document.getElementById("distributor-status").value = status;
+  document.getElementById("modal-title").innerHTML = modal_title;    
+  document.getElementById("modal-message").innerHTML = modal_message;    
+}
+
 function toggleModal(modalID) {
   document.getElementById(modalID).classList.toggle("hidden");
   document.getElementById(modalID + "-backdrop").classList.toggle("hidden");
   document.getElementById(modalID).classList.toggle("flex");
   document.getElementById(modalID + "-backdrop").classList.toggle("flex");
 }
+
 //hide div with id sub-menu-1 when click on button
 var toggleitem = 1;
 function showhide(num) {
@@ -48,89 +166,73 @@ function navcolor(j1, j2, j3,style1,style2) {
 //     setTimeout(,3000);
 // }
 var i = 0;
-var imagesbg = Array("url(../assets/Electricity.jpg)", "url(https://images.unsplash.com/photo-1616763355603-9755a640a287?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1470&q=80)");
-setInterval(() => { console.log(document.getElementById('img').style.backgroundImage); document.getElementById('img').style.backgroundImage = imagesbg[i]; i++; if(i==2){i=0;} }, 3000);
-
-// validation
-
-const form = document.getElementById('f1');
-const email = document.getElementById('email2');
-const password = document.getElementById('password2');
+var imagesbg = Array("url(https://paytmblogcdn.paytm.com/wp-content/uploads/2021/07/picked-ElectricityBill_39_How-to-Change-Name-in-Electricity-Bill-800x500.jpg)", "url(https://www.edx.org/static/6ff7a7d18d6e835f4608aefcd96e25ae/learn_electricity.jpg)", "url(https://sites.google.com/a/thapar.edu/pee-107/_/rsrc/1504180556705/home/tvss-lightning.jpg?height=266&width=400)");
+setInterval(() => { console.log(document.getElementById('img').style.backgroundImage); document.getElementById('img').style.backgroundImage = imagesbg[i]; i++; if(i==3){i=0;} }, 3000);
 
 //Show input error messages
 function showError(input, message) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control error';
-    const small = formControl.querySelector('small');
-    small.innerText = message;
-}
-
-//show success colour
-function showSucces(input) {
-    const formControl = input.parentElement;
-    formControl.className = 'form-control success';
-}
-
-//check email is valid
-function checkEmail(input) {
-    const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
-    if(re.test(input.value.trim())) {
-        showSucces(input)
-    }else {
-        showError(input,'Email is not invalid');
-    }
-}
-
-//checkRequired fields
-function checkRequired(inputArr) {
-    inputArr.forEach(function(input){
-        if(input.value.trim() === ''){
-            showError(input,`${getFieldName(input)} is required`)
-        }else {
-            showSucces(input);
-        }
-    });
-}
-
-//check input Length
-function checkLength(input, min ,max) {
-    if(input.value.length < min) {
-        showError(input, `${getFieldName(input)} must be at least ${min} characters`);
-    }else if(input.value.length > max) {
-        showError(input, `${getFieldName(input)} must be les than ${max} characters`);
-    }else {
-        showSucces(input);
-    }
+  const formControl = input.parentElement;
+  formControl.className = "form-control error";
+  const small = formControl.querySelector("small");
+  small.innerText = message;
 }
 
 //get FieldName
 function getFieldName(input) {
-    return input.id.charAt(0).toUpperCase() + input.id.slice(1);
+  return input.id.charAt(0).toUpperCase() + input.id.slice(1);
 }
 
-// // check passwords match
-// function checkPasswordMatch(input1, input2) {
-//     if(input1.value !== input2.value) {
-//         showError(input2, 'Passwords do not match');
-//     }
-// }
+function validatelogin() {
+  console.log("login")
+  const email = document.getElementById("email");
+  const password = document.getElementById("password");
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (!email.value.match(mailformat)) {
+    showError(email, "Email is not valid");
+    return false;
+  } else {
+    showError(email, "");
+  }
 
-//Event Listeners
-form.addEventListener('submit',function(e) {
-    e.preventDefault();
+  if (password.value.length < 6) {
+    showError(password, "Password must be at least 6 characters");
+    return false;
+  } else {
+    showError(password, "");
+  }
+  return true;
+}
 
-    checkRequired([email, password]);
-    checkLength(password,6,25);
-    checkEmail(email);
-}); 
-
-const form2 = document.getElementById('l2');
-form2.addEventListener('submit',function(e) {
-  e.preventDefault();
-
-  checkRequired([document.getElementById('password1'), document.getElementById('email1')]);
-  checkLength(document.getElementById('password1'),6,25);
-  checkLength(document.getElementById('phone'),10,10);
-  checkEmail(document.getElementById('email1'));
-}); 
-
+function validateReg() {
+  console.log("validate")
+  const email = document.getElementById("email1");
+  const name = document.getElementById("name");
+  const password = document.getElementById("password1");
+  const phone = document.getElementById("phone");
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+  if (!email.value.match(mailformat)) {
+    showError(email, "Email is not valid");
+    return false;
+  } else {
+    showError(email, "");
+  }
+  if (name.value.length < 3) {
+    showError(name, "Name must be at least 3 characters");
+    return false;
+  } else {
+    showError(name, "");
+  }
+  if (phone.value.length < 10 || phone.value.length > 10) {
+    showError(phone, "Phone must be at 10 digits");
+    return false;
+  } else {
+    showError(phone, "");
+  }
+  if (password.value.length < 6) {
+    showError(password, "Password must be at least 6 characters");
+    return false;
+  } else {
+    showError(password, "");
+  }
+  return true;
+}
