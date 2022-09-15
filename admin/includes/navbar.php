@@ -4,6 +4,7 @@ $directoryURI = $_SERVER['REQUEST_URI'];
 $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
 $third_part = $components[3];
+session_start();
 ?>
 
 <!DOCTYPE html>

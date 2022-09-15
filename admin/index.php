@@ -1,6 +1,10 @@
-<?php 
-  include("./includes/navbar.php");
-  include("./includes/dbConnection.php");  
+<?php
+include("./includes/navbar.php");
+include("./includes/dbConnection.php");
+if (!isset($_SESSION["is_admin"])) {
+  echo "<script>window.location.href='../login.php';</script>";
+}
+
 ?>
 
 <div class="md:pl-64 flex flex-col flex-1">
@@ -57,43 +61,43 @@
                   </thead>
                   <tbody class="bg-white divide-y divide-gray-200">
                     <?php
-                      $qc = "SELECT * FROM consumerrequest";
-                      $res = $conn->query($qc);
-                      while($r = $res->fetch_assoc()) { 
+                    $qc = "SELECT * FROM consumerrequest";
+                    $res = $conn->query($qc);
+                    while ($r = $res->fetch_assoc()) {
                     ?>
-                    <tr>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        <?php echo $r["id"]; ?>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
-                        <?php echo $r["name"]; ?> <br> <span class="text-sm text-gray-500"><?php echo $r["email"]; ?></span>
-                      </td>
-                      <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
-                        <?php echo $r["address"]; ?>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <?php echo $r["phone"]; ?>  
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <?php echo $r["region"]; ?>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <?php echo $r["phase_id"]; ?>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
-                        <?php echo $r["conn_type"]; ?>
-                      </td>
-                      <td class="px-6 py-4 whitespace-nowrap text-right">
-                        <button type="button" onclick="populateUserRequestForm('<?php echo $r['id'] ?>', '<?php echo $r['address'] ?>', '<?php echo $r['region'] ?>', '<?php echo $r['phase_id']; ?>', '<?php echo $r['conn_type']; ?>'); toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
-                          Approve
-                        </button>
-                        <button type="button" onclick="userRequestDeleteForm('<?php echo $r['id'] ?>'); toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                          Reject
-                        </button>
-                      </td>
-                    </tr>
+                      <tr>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <?php echo $r["id"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                          <?php echo $r["name"]; ?> <br> <span class="text-sm text-gray-500"><?php echo $r["email"]; ?></span>
+                        </td>
+                        <td class="px-6 py-4 whitespace-wrap text-sm text-gray-500">
+                          <?php echo $r["address"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <?php echo $r["phone"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <?php echo $r["region"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <?php echo $r["phase_id"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm text-gray-500">
+                          <?php echo $r["conn_type"]; ?>
+                        </td>
+                        <td class="px-6 py-4 whitespace-nowrap text-right">
+                          <button type="button" onclick="populateUserRequestForm('<?php echo $r['id'] ?>', '<?php echo $r['address'] ?>', '<?php echo $r['region'] ?>', '<?php echo $r['phase_id']; ?>', '<?php echo $r['conn_type']; ?>'); toggleModal('add-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-green-600 hover:bg-green-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-green-500">
+                            Approve
+                          </button>
+                          <button type="button" onclick="userRequestDeleteForm('<?php echo $r['id'] ?>'); toggleModal('reject-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-xs font-medium rounded shadow-sm text-white bg-red-600 hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                            Reject
+                          </button>
+                        </td>
+                      </tr>
                     <?php
-                      }
+                    }
                     ?>
                   </tbody>
                 </table>
@@ -117,11 +121,11 @@
           <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
             <div class="mt-3 text-center sm:mt-0 sm:text-left">
               <div class="divide-y divide-gray-200">
-                <input type="number" hidden id="consumer-id" name="consumer_id"/>
-                <input type="text" hidden id="consumer-address" name="consumer_address"/>
-                <input type="text" hidden id="consumer-region" name="consumer_region"/>
-                <input type="text" hidden id="consumer-conn_type" name="consumer_conn_type"/>
-                <input type="text" hidden id="consumer-phase_id" name="consumer_phase_id"/>
+                <input type="number" hidden id="consumer-id" name="consumer_id" />
+                <input type="text" hidden id="consumer-address" name="consumer_address" />
+                <input type="text" hidden id="consumer-region" name="consumer_region" />
+                <input type="text" hidden id="consumer-conn_type" name="consumer_conn_type" />
+                <input type="text" hidden id="consumer-phase_id" name="consumer_phase_id" />
                 <h3 class="text-lg leading-6 font-medium text-gray-900">
                   Add meter
                 </h3>
@@ -182,8 +186,8 @@
     <div class="fixed inset-0 bg-gray-500 bg-opacity-75 transition-opacity" aria-hidden="true"></div>
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
     <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
-      <form action="includes/CRUD.php?action=deleteUserReq" method="post">  
-        <input type="number" id="userreq-delete-id" name="userreq-delete-id"/>    
+      <form action="includes/CRUD.php?action=deleteUserReq" method="post">
+        <input type="number" id="userreq-delete-id" name="userreq-delete-id" />
         <div class="sm:flex sm:items-start">
           <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
             <!-- Heroicon name: outline/exclamation -->

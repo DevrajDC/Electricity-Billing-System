@@ -1,85 +1,88 @@
-<?php      
-    session_start();
-      include("admin/includes/dbConnection.php");
-      if(isset($_GET["logout"])) {
-        setcookie("consumer", "", time() - 3600,'/');
-      } elseif(isset($_COOKIE["consumer"])) {
-        $_SESSION["consumer"] = $_COOKIE["consumer"];
+<?php
+session_start();
+include("admin/includes/dbConnection.php");
+if (isset($_GET["logout"])) {
+    setcookie("consumer", "", time() - 3600, '/');
+} elseif (isset($_COOKIE["consumer"])) {
+    $_SESSION["consumer"] = $_COOKIE["consumer"];
+    echo "<script>window.location.href='consumer/index.php';</script>";
+}
+unset($_SESSION["meter_num"]);
+unset($_SESSION["consumer"]);
+
+function registerUser()
+{
+    echo "<BR>email: " . $_POST["email"];
+    echo "<BR>name: " . $_POST["name"];
+    echo "<BR>phone: " . $_POST["phone"];
+    echo "<BR>pwd: " . $_POST["password"];
+
+    $email = $_POST["email"];
+    $name = $_POST["name"];
+    $phone = $_POST["phone"];
+    $pwd = password_hash($_POST["password"], PASSWORD_BCRYPT);
+
+    $q = "SELECT consumer_id FROM users ORDER BY consumer_id DESC LIMIT 1";
+    $res = $GLOBALS['conn']->query($q);
+    $r = $res->fetch_assoc();
+    $consumer_id = $r["consumer_id"] + 1;
+    echo "<BR>consumer_id: " . $consumer_id;
+
+    $query = "INSERT INTO Users Values ($consumer_id, '$email', '$pwd', '$name', $phone, 0)";
+    if ($GLOBALS['conn']->query($query) === TRUE) {
+        $_SESSION["consumer"] = $consumer_id;
         echo "<script>window.location.href='consumer/index.php';</script>";
-      }
-      unset($_SESSION["meter_num"]);    
-      unset($_SESSION["consumer"]);
-
-      function registerUser() {
-          echo "<BR>email: ".$_POST["email"];
-          echo "<BR>name: ".$_POST["name"];
-          echo "<BR>phone: ".$_POST["phone"];
-          echo "<BR>pwd: ".$_POST["password"];
-
-        $email = $_POST["email"];
-        $name = $_POST["name"];
-        $phone = $_POST["phone"];
-        $pwd = password_hash($_POST["password"], PASSWORD_BCRYPT);
-
-        $q = "SELECT consumer_id FROM users ORDER BY consumer_id DESC LIMIT 1";
-        $res = $GLOBALS['conn']->query($q);
-        $r = $res->fetch_assoc();
-        $consumer_id = $r["consumer_id"] + 1;
-        echo "<BR>consumer_id: ".$consumer_id;
-        
-        $query = "INSERT INTO Users Values ($consumer_id, '$email', '$pwd', '$name', $phone, 0)";
-        if ($GLOBALS['conn']->query($query) === TRUE) {
-            $_SESSION["consumer"] = $consumer_id;
-            echo "<script>window.location.href='consumer/index.php';</script>";
-        } else { 
-            echo "<script>
+    } else {
+        echo "<script>
                 alert('Error Registering User');
                 window.location.href='login.php';
                 </script>";
-        }       
-      }
+    }
+}
 
-      function loginUser() {
-        $email = $_POST["email"];
-        // $pwd = $_POST["password"];
-        // echo "<BR>Email: ".$email;
-        // echo "<BR>Password: ".$pwd;
+function loginUser()
+{
+    $email = $_POST["email"];
+    // $pwd = $_POST["password"];
+    // echo "<BR>Email: ".$email;
+    // echo "<BR>Password: ".$pwd;
 
-        $q = "SELECT consumer_id, pwd, is_admin FROM users WHERE email = '$email'";
-        $res = $GLOBALS['conn']->query($q);
+    $q = "SELECT consumer_id, pwd, is_admin FROM users WHERE email = '$email'";
+    $res = $GLOBALS['conn']->query($q);
 
-        if (mysqli_num_rows($res) == 0) { 
-            echo "<script>
+    if (mysqli_num_rows($res) == 0) {
+        echo "<script>
                 alert('No User Found');
                 window.location.href='login.php';
                 </script>";
-         } else { 
-            $r = $res->fetch_assoc();
-            if (password_verify($_POST["password"], $r["pwd"])) {
-                if(isset($_POST["remember-me"])) {
-                    setcookie('consumer',$r["consumer_id"],time()+60*60*24*365, '/');
-                }
-                if ($r["is_admin"] == 1) {
-                    $_SESSION["is_admin"] = 1;
-                    echo "<script>window.location.href='admin/index.php';</script>";    
-                } else {
-                    $_SESSION["consumer"] = $r["consumer_id"];
-                    echo "<script>window.location.href='consumer/index.php';</script>";    
-                }
-            } else {
+    } else {
+        $r = $res->fetch_assoc();
+        if (password_verify($_POST["password"], $r["pwd"])) {
+            if (isset($_POST["remember-me"])) {
+                setcookie('consumer', $r["consumer_id"], time() + 60 * 60 * 24 * 365, '/');
+            }
+            if ($r["is_admin"] == 1) {
+                $_SESSION["is_admin"] = TRUE;
                 echo "<script>
+                window.location.href='admin/index.php';</script>";
+            } else {
+                $_SESSION["consumer"] = $r["consumer_id"];
+                echo "<script>window.location.href='consumer/index.php';</script>";
+            }
+        } else {
+            echo "<script>
                     alert('Password Incorrect');
                     window.location.href='login.php';
                     </script>";
-            }  
-         }  
-      }
+        }
+    }
+}
 
-      if(isset($_POST['Register'])) {
-        registerUser();
-      } elseif(isset($_POST["Login"])) {
-        loginUser();
-      }
+if (isset($_POST['Register'])) {
+    registerUser();
+} elseif (isset($_POST["Login"])) {
+    loginUser();
+}
 
 ?>
 
@@ -151,7 +154,7 @@
                             <div style="opacity:0; animation-name:changeform; animation-delay:0.15s; animation-duration: 0.5s; animation-timing-function:ease-in;animation-fill-mode: forwards;">
                                 <button type="submit" name="Login" class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">Sign In</button>
                             </div>
-                        </form> 
+                        </form>
                     </div>
                     <!-- register -->
                     <form id="l2" style="display:none;" action="#" method="POST" onsubmit="return validateReg()" class="space-y-4 pr mt-8">
@@ -160,28 +163,28 @@
                             </label>
                             <div class="mt-1">
                                 <input id="email1" name="email" type="text" autocomplete="email" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                 <small class="text-red-400"></small>
+                                <small class="text-red-400"></small>
                             </div>
                         </div>
                         <div style=" opacity:0; animation-name:changeform; animation-delay:0.03s; animation-duration: 0.5s; animation-timing-function:ease-in;animation-fill-mode: forwards;">
                             <label for="email" class="block text-sm font-medium text-gray-700"> Full Name </label>
                             <div class="mt-1">
                                 <input id="name" name="name" type="text" autocomplete="email" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                 <small class="text-red-400"></small>
+                                <small class="text-red-400"></small>
                             </div>
                         </div>
                         <div style="opacity:0; animation-name:changeform; animation-delay:0.06s; animation-duration: 0.5s; animation-timing-function:ease-in;animation-fill-mode: forwards;">
                             <label for="email" class="block text-sm font-medium text-gray-700"> Phone </label>
                             <div class="mt-1">
                                 <input id="phone" name="phone" type="number" autocomplete="email" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                 <small class="text-red-400"></small>
+                                <small class="text-red-400"></small>
                             </div>
                         </div>
                         <div class="space-y-1" style="opacity:0; animation-name:changeform; animation-delay:0.12s; animation-duration: 0.5s; animation-timing-function:ease-in;animation-fill-mode: forwards;">
                             <label for="password" class="block text-sm font-medium text-gray-700"> Password </label>
                             <div class="mt-1">
                                 <input id="password1" name="password" type="password" autocomplete="current-password" class="appearance-none block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm placeholder-gray-400 focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
-                                 <small class="text-red-400"></small>
+                                <small class="text-red-400"></small>
                             </div>
                         </div>
                         <div style="opacity:0; animation-name:changeform; animation-delay:0.15s; animation-duration: 0.5s; animation-timing-function:ease-in;animation-fill-mode: forwards;">
