@@ -105,10 +105,8 @@ if (isset($_POST['Register'])) {
             <div id="img" class="hidden bg-cover lg:block lg:w-2/3" style="transition: all 0.5s; background-image: url(https://sites.google.com/a/thapar.edu/pee-107/_/rsrc/1504180556705/home/tvss-lightning.jpg?height=266&width=400)">
                 <div class="flex items-center h-full px-20 bg-gray-900 bg-opacity-40">
                     <div>
-                        <h2 class="font-bold text-white text-2xl mb-8 ">Oneshield EBS</h2>
-                        <p class="max-w-xl mt-3 text-gray-300">Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                            In autem ipsa, nulla laboriosam dolores, repellendus perferendis libero suscipit nam
-                            temporibus molestiae</p>
+                        <h2 class="font-bold text-white text-4xl mb-2 ">Oneshield EBS</h2>
+                        <p class="max-w-xl text-lg text-gray-300">One stop destination for all your electricity bill payments.</p>
                     </div>
                 </div>
             </div>
