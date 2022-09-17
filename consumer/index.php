@@ -8,7 +8,7 @@ if (isset($_COOKIE["consumer"])) {
     $consumer = $_SESSION["consumer"];
     unset($_SESSION["meter_num"]);
 } else {
-    header('Location: http://localhost/ebs3/login.php');
+    header('Location: http://localhost/Electricity-Billing-System/login.php');
     die();
 }
 
@@ -149,7 +149,7 @@ if (isset($_COOKIE["consumer"])) {
         <div class="fixed inset-0 z-10 overflow-y-auto">
             <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
                 <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                    <form action="includes/CRUD.php?action=requestMeter" method="post">
+                    <form action="includes/CRUD.php?action=requestMeter" method="post" onsubmit="return validateConnectionRequest()">
                         <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                             <div class="mt-3 text-center sm:mt-0 sm:text-left">
                                 <input name="consumer-id" type="text" class="hidden" value="<?php echo $consumer; ?>" id="consumer-id" />
@@ -164,6 +164,7 @@ if (isset($_COOKIE["consumer"])) {
                                             </label>
                                             <div class="mt-1">
                                                 <textarea rows="3" name="meter-address" id="meter-address" class="w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"></textarea>
+                                                <small class="text-red-400"></small>
                                             </div>
                                         </div>
                                         <div class="sm:col-span-3">
