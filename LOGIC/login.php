@@ -1,5 +1,9 @@
 <?php
   include("../DB/accessAccount.php");
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
+
   define("ERROR_MSG", 0);
   define("ERROR_CODE", 1);
   define("CONSMR_ID", 2);
@@ -55,11 +59,15 @@
 
     $result = validateUser($email, $pwd);
     if($result[ERROR_CODE] != 1) {
-      echo "<script>
-      alert('". $result[ERROR_MSG] ."');
-      window.location.href='../UI/login.php';
-      </script>";
+      $_SESSION["toast"] = 0;
+      if ($result[ERROR_CODE] == 0) {
+        $_SESSION["toastMessage"] = "No User Found";
+      } else {
+        $_SESSION["toastMessage"] = "Password Incorrect";
+      }
     } else {
+      $_SESSION["toast"] = 1;
+      $_SESSION["toastMessage"] = "Login Successful";
       if (isset($_POST["remember-me"])) {
         setcookie('consumer', $result[CONSMR_ID], time() + 60 * 60 * 24 * 365, '/');
       }
@@ -71,7 +79,6 @@
         $_SESSION["consumer"] = $result[CONSMR_ID];
         echo "<script>window.location.href='../UI/consumer/index.php';</script>";
       }
-
     }
   }
 ?>
