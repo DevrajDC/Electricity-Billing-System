@@ -145,7 +145,7 @@ if (!isset($_SESSION["is_admin"])) {
     <span class="hidden sm:inline-block sm:align-middle sm:h-screen" aria-hidden="true">&#8203;</span>
     <div class="inline-block align-bottom bg-white rounded-lg px-4 pt-5 pb-4 text-left overflow-hidden shadow-xl transform transition-all sm:my-8 sm:align-middle sm:max-w-lg sm:w-full sm:p-6">
       <form action="../../LOGIC/admin/admin.php?action=deleteUserReq" method="post">
-        <input type="number" id="userreq-delete-id" name="userreq-delete-id" />
+        <input type="number" id="userreq-delete-id" name="userreq-delete-id" hidden/>
         <div class="sm:flex sm:items-start">
           <div class="mx-auto flex-shrink-0 flex items-center justify-center h-12 w-12 rounded-full bg-red-100 sm:mx-0 sm:h-10 sm:w-10">
             <!-- Heroicon name: outline/exclamation -->
