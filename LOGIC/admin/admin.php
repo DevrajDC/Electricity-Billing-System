@@ -1,10 +1,12 @@
 <?php
   include("../../DB/admin/CRUD.php");
-
+  $var = 0;
   if(session_status() === PHP_SESSION_NONE) {
     session_start();
   }
-  if(isset($_GET["action"])) {
+  if(isset($_GET["action"]) && $_GET["action"] != "addMeter") {
+    $var+=1;
+    echo "<script>alert('var:".$var."');</script>";
     $_GET["action"]();
   }
 
@@ -57,6 +59,19 @@ function displayConnRequests() {
   }       
 }
 
+function deleteUserReq() {
+  $id = $_POST["userreq-delete-id"];
+  $result = deleteConnReq($id);   
+  if ($result) {
+    $_SESSION["toast"] = 1;
+    $_SESSION["toastMessage"] = "Request Deleted Successfully"; 
+  } else {
+    $_SESSION["toast"] = 0;
+    $_SESSION["toastMessage"] = "Error Deleting Request";
+  }
+   echo "<script>window.location.href='../../UI/admin/index.php';</script>";
+}
+
 function addMeter() {
   $id = $_POST["consumer_id"];
   $meter_no = $_POST["meter-no"];
@@ -70,11 +85,12 @@ function addMeter() {
   echo "<script>console.log('HELLEOE');</script>";
   //insert Meter details
   $result = newMeter($meter_no, $id, $conn_status, $conn_type, $conn_date, $region, $address, $phase_id, $distributor);
-  
+    // echo "<script>alert('Result: ".$result."');</script>";
   if ($result == 2) {
     $_SESSION["toast"] = 1;
     $_SESSION["toastMessage"] = "Meter Added Successfully<BR>Request Deleted Successfully"; 
   } else {
+    echo "<script>console.log(".$result.");</script>";
     $_SESSION["toast"] = 0;
     if($result == 0) {
       $_SESSION["toastMessage"] = "Error Adding Meter";
@@ -85,18 +101,6 @@ function addMeter() {
    echo "<script>window.location.href='../../UI/admin/index.php';</script>";
 }
 
-function deleteUserReq() {
-  $id = $_POST["userreq-delete-id"];
-  $result = deleteConnReq($id);   
-  if ($result) {
-    $_SESSION["toast"] = 1;
-    $_SESSION["toastMessage"] = "Request Deleted Successfully"; 
-  } else {
-    $_SESSION["toast"] = 0;
-    $_SESSION["toastMessage"] = "Error Deleting Request";
-  }
-   echo "<script>window.location.href='../../UI/admin/index.php';</script>";
-}
 
 function displayComplaints() {
   $result = getComplaintList();

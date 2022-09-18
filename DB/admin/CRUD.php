@@ -24,26 +24,25 @@
     return $GLOBALS['conn']->query($qc);
   }
 
-  function newMeter($meter_no, $id, $conn_status, $conn_type, $conn_date, $region, $address, $phase_id, $distributor) {
-    $status = 0;
-    $q = "INSERT INTO Meterdata VALUES ($meter_no, $id, '$conn_status', '$conn_type', '$conn_date', '$region', '$address', '$phase_id', $distributor)";
-    echo "<script>console.log('".$q."');</script>";
-    if ($GLOBALS['conn']->query($q) === TRUE) {
-      $status = 1;
-      $res = deleteUserReq($id);   
-      if($res) {
-        $status = 2;
-      }
-    } 
-    return $status;
-  }
-
   function deleteConnReq($id) {
     $q = "DELETE FROM consumerrequest WHERE id = '$id'";
     if ($GLOBALS['conn']->query($q) === TRUE) {
       return TRUE;  
     } 
     return FALSE;
+  }
+
+  function newMeter($meter_no, $id, $conn_status, $conn_type, $conn_date, $region, $address, $phase_id, $distributor) {
+    $status = 0;
+    $q = "INSERT INTO Meterdata VALUES ($meter_no, $id, '$conn_status', '$conn_type', '$conn_date', '$region', '$address', '$phase_id', $distributor)";
+    if ($GLOBALS['conn']->query($q) === TRUE) {
+      $status = 1;
+      $q = "DELETE FROM consumerrequest WHERE id = $id";
+      if ($GLOBALS['conn']->query($q) === TRUE) {
+        $status = 2;
+      } 
+    } 
+    return $status;
   }
 
   function getComplaintList() {
