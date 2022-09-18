@@ -3,7 +3,8 @@
 $directoryURI = $_SERVER['REQUEST_URI'];
 $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
-$third_part = $components[3];
+$third_part = $components[4];
+
 session_start();
 ?>
 
@@ -137,20 +138,20 @@ session_start();
                                                                                                                                                                     } else {
                                                                                                                                                                       echo "bg-white text-gray-600";
                                                                                                                                                                     } ?> group-hover:text-indigo-500">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5m-13.5-9L12 3m0 0l4.5 4.5M12 3v13.5" />
                 </svg>
 
                 <span class="flex-1">Upload File</span></a>
             </div>
           </nav>
           <div class="space-y-1">
-              <a href="../login.php" class="bg-indigo-50 m-2 hover:bg-indigo-100 hover:text-indigo-600 group w-auto flex items-center pl-2 pr-1 py-2 text-left text-sm text-gray-600 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
-                  <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
-                </svg>
+            <a href="../login.php" class="bg-indigo-50 m-2 hover:bg-indigo-100 hover:text-indigo-600 group w-auto flex items-center pl-2 pr-1 py-2 text-left text-sm text-gray-600 font-medium rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6 mr-2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15M12 9l-3 3m0 0l3 3m-3-3h12.75" />
+              </svg>
 
-                <span class="flex-1">LogOut</span></a>
-            </div>
+              <span class="flex-1">LogOut</span></a>
+          </div>
         </div>
       </div>
     </div>

@@ -1,13 +1,13 @@
-<?php   
-  include("../../LOGIC/consumer/includes/navbar.php"); 
-  include("../../LOGIC/consumer/consumerinfo.php"); 
+<?php
+include("../../LOGIC/consumer/includes/navbar.php");
+include("../../LOGIC/consumer/consumerinfo.php");
 ?>
 
 <header class="py-5">
-  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-end">
-    <h1 class="text-3xl font-bold text-white">Bills</h1>
-    <h1 class="text-lg font-semibold text-white">Connection ID: <span class="text-md text-white px-4 py-1 ml-2 border border-gray-600 rounded"><?php echo $meter; ?></span></h1>
-  </div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex justify-between items-end">
+        <h1 class="text-3xl font-bold text-white">Bills</h1>
+        <h1 class="text-lg font-semibold text-white">Connection ID: <span class="text-md text-white px-4 py-1 ml-2 border border-gray-600 rounded"><?php echo $meter; ?></span></h1>
+    </div>
 </header>
 </div>
 
@@ -39,7 +39,7 @@
                                                 </th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                     Due Date
-                                                </th> 
+                                                </th>
                                                 <th scope="col" class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">
                                                 </th>
                                             </tr>
@@ -67,19 +67,20 @@
     <div class="fixed inset-0 z-10 overflow-y-auto">
         <div class="flex min-h-full items-end justify-center p-4 text-center sm:items-center sm:p-0">
             <div class="relative transform overflow-hidden rounded-lg bg-white text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg">
-                <form class="space-y-8 divide-y divide-gray-200" action="../../LOGIC/consumer/consumerinfo.php?action=registerComplaint" method="post">
+                <form action="../../LOGIC/consumer/consumerinfo.php?action=registerComplaint" method="post" onsubmit="return validateComplaint();">
                     <input name="bill_num" type="text" class="hidden" value="" id="bill_num" />
                     <input name="meter_num" type="text" class="hidden" value="" id="meter_num" />
                     <div class="bg-white px-4 pt-5 pb-4 sm:p-6 sm:pb-4">
                         <div class="mt-3 text-center sm:mt-0 sm:text-left">
-                                <div class="space-y-8 divide-y divide-gray-200">
-                                    <div>
-                                        <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">
-                                            Add Complaint
-                                        </h3>
-                                        <textarea id="summary" name="summary" rows="3" style="width: 100%" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md p-2"></textarea>
-                                    </div>
+                            <div class="space-y-8 divide-y divide-gray-200">
+                                <div>
+                                    <h3 class="text-lg leading-6 font-medium text-gray-900 mb-4">
+                                        Add Complaint
+                                    </h3>
+                                    <textarea id="summary" name="summary" rows="3" style="width: 100%" class="shadow-sm focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border border-gray-300 rounded-md p-2"></textarea>
+                                    <small class="text-red-400"></small>
                                 </div>
+                            </div>
                         </div>
                     </div>
                     <div class="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
@@ -93,5 +94,40 @@
         </div>
     </div>
 </div>
+<script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+<script>
+    $('body').on('click', '.pay_now', function(e) {
+        var totalAmount = $(this).attr("data-amount");
+        console.log(totalAmount);
+        var options = {
+            "key": "rzp_test_EApKQs2V7zlaHT",
+            "amount": totalAmount * 100,
+            "name": "EBS",
+            "description": "Payment",
+            "callback_url": "http://localhost/Electricity-Billing-System/UI/consumer/payment-process.php",
+            "handler": function(response) {
+                $.ajax({
+                    url: 'http://localhost/Electricity-Billing-System/UI/consumer/payment-process.php',
+                    type: 'post',
+                    dataType: 'json',
+                    data: {
+                        razorpay_payment_id: response.razorpay_payment_id,
+                        totalAmount: totalAmount,
+                    },
+                    success: function(msg) {
+                        window.location.href = 'http://localhost/Electricity-Billing-System/UI/consumer/success.php';
+                    }
+                });
+            },
+
+            "theme": {
+                "color": "#528FF0"
+            }
+        };
+        var rzp2 = new Razorpay(options);
+        rzp2.open();
+        e.preventDefault();
+    });
+</script>
 
 <?php include("../../LOGIC/consumer/includes/footer.php"); ?>

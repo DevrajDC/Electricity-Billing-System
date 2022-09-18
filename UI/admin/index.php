@@ -1,10 +1,10 @@
 <?php
-  include("../../LOGIC/admin/includes/navbar.php"); 
-  include("../../LOGIC/admin/admin.php"); 
+include("../../LOGIC/admin/includes/navbar.php");
+include("../../LOGIC/admin/admin.php");
 
-  if (!isset($_SESSION["is_admin"])) {
-    header("Location: ../login.php");
-  }
+if (!isset($_SESSION["is_admin"])) {
+  header("Location: ../login.php");
+}
 ?>
 
 <div class="md:pl-64 flex flex-col flex-1">

@@ -5,16 +5,16 @@ jQueryScript.setAttribute(
 );
 document.head.appendChild(jQueryScript);
 
-function showsuccessbar(prf1, msg, flag) { 
-  console.log('a');
-  document.getElementById(prf1).style.display="block";
-  if(flag) {
-    document.getElementById("success_msg").innerHTML=msg;
+function showsuccessbar(prf1, msg, flag) {
+  console.log("a");
+  document.getElementById(prf1).style.display = "block";
+  if (flag) {
+    document.getElementById("success_msg").innerHTML = msg;
   } else {
-    document.getElementById("err_msg").innerHTML=msg;
+    document.getElementById("err_msg").innerHTML = msg;
   }
   setTimeout(() => {
-    document.getElementById(prf1).style.display="none";
+    document.getElementById(prf1).style.display = "none";
   }, 3000);
 }
 
@@ -196,7 +196,6 @@ var imagesbg = Array(
   "url(https://sites.google.com/a/thapar.edu/pee-107/_/rsrc/1504180556705/home/tvss-lightning.jpg?height=266&width=400)"
 );
 setInterval(() => {
-  console.log(document.getElementById("img").style.backgroundImage);
   document.getElementById("img").style.backgroundImage = imagesbg[i];
   i++;
   if (i == 3) {

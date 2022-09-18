@@ -1,5 +1,5 @@
 <?php
-  include("../../LOGIC/consumer/index.php");
+include("../../LOGIC/consumer/index.php");
 ?>
 <!DOCTYPE html>
 <html lang="en" class="h-full bg-gray-100">
@@ -58,20 +58,20 @@
             </header>
         </div>
         <main class="-mt-32">
-          <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
-            <!-- Content to display all Active Connections -->
-            <div class="bg-white rounded-lg shadow px-12 py-12">
-              <div class="flex flex-col border-gray-200 rounded-lg space-y-6">
-                <?php displayConnections(); ?>
-                <div class="flex justify-center">
-                  <button type="button" onclick="toggleModal('request-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-sm font-medium rounded shadow-sm bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
-                    Request for New Connection
-                  </button>
+            <div class="max-w-7xl mx-auto pb-12 px-4 sm:px-6 lg:px-8">
+                <!-- Content to display all Active Connections -->
+                <div class="bg-white rounded-lg shadow px-12 py-12">
+                    <div class="flex flex-col border-gray-200 rounded-lg space-y-6">
+                        <?php displayConnections(); ?>
+                        <div class="flex justify-center">
+                            <button type="button" onclick="toggleModal('request-meter-modal')" class="inline-flex items-center px-2.5 py-1.5 border border-transparent text-sm font-medium rounded shadow-sm bg-indigo-600 text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500">
+                                Request for New Connection
+                            </button>
+                        </div>
+                    </div>
                 </div>
-              </div>
+                <!-- /End Content -->
             </div>
-            <!-- /End Content -->
-          </div>
         </main>
     </div>
 
@@ -95,6 +95,7 @@
                                             </label>
                                             <div class="mt-1">
                                                 <textarea rows="3" name="meter-address" id="meter-address" class="w-full px-3 py-1.5 text-base font-normal text-gray-700 bg-white bg-clip-padding bg-no-repeat border border-solid border-gray-300 rounded transition ease-in-out m-0 focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"></textarea>
+                                                <small class="text-red-400"></small>
                                             </div>
                                         </div>
                                         <div class="sm:col-span-3">

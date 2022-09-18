@@ -4,7 +4,7 @@ session_start();
 $directoryURI = $_SERVER['REQUEST_URI'];
 $path = parse_url($directoryURI, PHP_URL_PATH);
 $components = explode('/', $path);
-$third_part = $components[3];
+$third_part = $components[4];
 ?>
 
 <!DOCTYPE html>
@@ -14,6 +14,7 @@ $third_part = $components[3];
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
     <title>Consumers</title>
 </head>
 
