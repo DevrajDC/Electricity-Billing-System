@@ -36,7 +36,7 @@
     echo "<BR>consumer_id: " . $consumer_id;
 
     $userAdded = addNewUser($consumer_id, $email, $pwd, $name, $phone);
-    if ($userAdd) {
+    if ($userAdded) {
       $_SESSION["consumer"] = $consumer_id;
       echo "<script>window.location.href='../UI/consumer/index.php';</script>";
     } else {

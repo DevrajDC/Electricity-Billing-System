@@ -98,24 +98,30 @@ include("../../LOGIC/consumer/consumerinfo.php");
 <script>
     $('body').on('click', '.pay_now', function(e) {
         var totalAmount = $(this).attr("data-amount");
+        var billNum = $(this).attr("bill-num");
         console.log(totalAmount);
+        console.log(billNum);
         var options = {
             "key": "rzp_test_EApKQs2V7zlaHT",
             "amount": totalAmount * 100,
             "name": "EBS",
             "description": "Payment",
-            "callback_url": "http://localhost/Electricity-Billing-System/UI/consumer/payment-process.php",
+            "callback_url": "../../LOGIC/consumer/payment-process.php",
             "handler": function(response) {
                 $.ajax({
-                    url: 'http://localhost/Electricity-Billing-System/UI/consumer/payment-process.php',
+                    url: '../../LOGIC/consumer/payment-process.php',
                     type: 'post',
                     dataType: 'json',
                     data: {
                         razorpay_payment_id: response.razorpay_payment_id,
                         totalAmount: totalAmount,
+                        billNum: billNum
                     },
                     success: function(msg) {
-                        window.location.href = 'http://localhost/Electricity-Billing-System/UI/consumer/success.php';
+                        window.location.href = '../../LOGIC/consumer/success.php';
+                    },
+                    fail: function(msg) {
+                        window.location.href = '../../LOGIC/consumer/failure.php';
                     }
                 });
             },

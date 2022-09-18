@@ -89,4 +89,16 @@
     }
     return $status;
   }
+
+  function updateBillPayment($data) {
+    $billNum = $data["billNum"];
+    $txn = $data["payment_id"];
+    
+    $q = "UPDATE bills SET stage='Paid', txn_id='$txn' WHERE bill_no = $billNum";
+    if ($GLOBALS['conn']->query($q) === TRUE) {
+      return TRUE;
+    }
+    return FALSE;
+  }
+
 ?>
