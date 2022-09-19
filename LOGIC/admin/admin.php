@@ -1,12 +1,9 @@
 <?php
   include("../../DB/admin/CRUD.php");
-  $var = 0;
   if(session_status() === PHP_SESSION_NONE) {
     session_start();
   }
-  if(isset($_GET["action"]) && $_GET["action"] != "addMeter") {
-    $var+=1;
-    echo "<script>alert('var:".$var."');</script>";
+  if(isset($_GET["action"])) { 
     $_GET["action"]();
   }
 

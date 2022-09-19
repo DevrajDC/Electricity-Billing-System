@@ -5,7 +5,7 @@
   include("../../DB/dbConnection.php");
 
   //Call function based on action set in url
-  if(isset($_GET["action"])) {
+  if(isset($_GET["action"]) && $_GET["action"] != "addMeter") {
     $_GET["action"]();
   }
 
